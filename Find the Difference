@@ -1,0 +1,16 @@
+from collections import Counter
+class Solution:
+    def findTheDifference(self, s: str, t: str) -> str:
+        count1=dict(Counter(s))
+        count2=dict(Counter(t))
+        
+        for i in count2:
+            if(i not in count1):
+                return i
+            elif(count2[i]>count1[i]):
+                return i
+            
+        
+        
+        
+        
