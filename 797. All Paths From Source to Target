@@ -1,0 +1,27 @@
+class Solution {
+public:
+    int target=0;
+    vector<int> temp;
+    vector<vector<int>> res;
+    void dfs(vector<vector<int>>graph,int currnode=0){
+        temp.push_back(currnode);
+        
+        if(target==currnode){
+            res.push_back(temp);
+        }
+        else{
+            for(auto node:graph[currnode]){
+                dfs(graph,node);
+            }
+        }
+        
+        
+        temp.pop_back();
+        
+    }
+    vector<vector<int>> allPathsSourceTarget(vector<vector<int>>& graph) {
+        target=graph.size()-1;
+        dfs(graph);
+        return res;
+    }
+};
