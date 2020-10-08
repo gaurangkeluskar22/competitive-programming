@@ -1,0 +1,17 @@
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        def binarysearch(nums,l,r,target):
+            if(r>=l):
+                mid=(l+r)//2
+                if(nums[mid]==target):
+                    return mid
+                elif(target<nums[mid]):
+                    return binarysearch(nums,l,mid-1,target)
+                elif(target>nums[mid]):
+                    return binarysearch(nums,mid+1,r,target)
+            else:
+                return -1
+
+        val=binarysearch(nums,0,len(nums)-1,target)
+        return val
+        
