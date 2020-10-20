@@ -1,0 +1,16 @@
+try:
+    for i in range(int(input())):
+        num=int(input())
+        num_str=str(num)
+        first=int(num_str[0])
+        first-=1
+        first*=10
+        print(first)
+        lenn=len(num_str)
+        count=0
+        for i in range(1,lenn+1):
+            count+=i
+        print(final+count) 
+
+except:
+    pass
