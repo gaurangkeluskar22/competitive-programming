@@ -1,0 +1,33 @@
+
+for i in range(int(input())):
+    num=int(input())
+    num1=(num*4)+1
+    data=[True for i in range(num1+1)]
+
+
+    p=num*2
+    p1=num*2
+    count=num
+    while(p<=num1):
+        if(p%2==0):
+            
+            for i in range(p*2,num1,p):
+                if(data[i]):
+                    data[i]=False
+        else:
+            if(data[p]):
+                data[p]=False
+        p+=1
+
+    final=[]
+    for i in range(p1,num1):
+    
+        if(data[i]):
+            final.append(i)
+            
+
+    for i in range(0,num):
+        print(final[i],end=" ")
+    print()
+
+
