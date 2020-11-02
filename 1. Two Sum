@@ -1,0 +1,11 @@
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        # here we will use two pointer approch
+        d={}
+        for i,n in enumerate(nums):
+            val=target-nums[i] 
+            if(val in d):
+                return [d[val],i]
+            else:
+                d[n]=i
+        
