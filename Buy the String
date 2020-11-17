@@ -1,0 +1,13 @@
+
+for t in range(int(input())):
+    n,c0,c1,h=map(int,input().strip().split())
+    string=str(input()[:n])
+    ans=0
+    for l in string:
+        if(l=='0'):
+            ans+=min(c0,c1+h)
+        if(l=='1'):
+            ans+=min(c1,c0+h)
+                
+    print(ans)
+            
