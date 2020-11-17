@@ -1,0 +1,16 @@
+class Solution:
+    def thousandSeparator(self, n: int) -> str:
+        arr=[]
+        count=0
+        for i in str(n)[::-1]:
+            if(count==3):
+                arr.append(".")
+                count=0
+            
+            arr.append(i)
+            count+=1
+        val=''
+        for t in range(0,len(arr)):
+            val+=arr.pop()
+        
+        return val
