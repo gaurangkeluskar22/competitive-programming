@@ -1,0 +1,18 @@
+class Solution:
+    def selfDividingNumbers(self, left: int, right: int) -> List[int]:
+        arr=[]
+        status=False
+        for i in range(left,right+1):
+            temp=i
+            for t in str(temp):
+                if(int(t)!=0 and i%int(t)==0):
+                    status=True
+                else:
+                    status=False
+                    break
+            if(status):
+                arr.append(temp)
+            status=False
+        return arr
+                
+        
