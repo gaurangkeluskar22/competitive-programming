@@ -1,0 +1,12 @@
+n,m,k=map(int,input().strip().split())
+ans=0
+for i in range(n):
+    arr=list(map(int,input().strip().split()))[:k+1]
+    #print(arr)
+    total_sum=sum(arr[:k])
+    #print("sum:",total_sum)
+    if(arr[-1]<=10 and total_sum>=m):
+       ans+=1
+
+print(ans)
+    
