@@ -1,0 +1,25 @@
+
+#include <bits/stdc++.h>
+class Solution {
+public:
+    int maxNumberOfBalloons(string text) {
+        set<char> s{'b','a','l','o','n'};
+        set<char> s1;
+        map<char,int> order;
+        for(int i=0;i<text.length();i++){
+            if(s.find(text[i])!=s.end()){
+                order[text[i]]++;   
+            }
+        }
+        for(auto it:order){
+            cout<<it.first<<it.second<<endl;
+            s1.insert(it.first);
+        }
+        if(s1==s){
+            return min({order['b'],order['a'],order['l']/2,order['o']/2,order['n']});
+        }
+        else{
+            return 0;
+        }
+    }
+};
