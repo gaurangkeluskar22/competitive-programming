@@ -1,0 +1,11 @@
+from collections import Counter
+class Solution:
+    def countWords(self,List, n):
+        count=Counter(List)
+        
+        res=0
+        for i in count:
+            if(count[i]==2):
+                res+=1
+        
+        return res
