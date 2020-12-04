@@ -1,0 +1,16 @@
+import math
+for i in range(int(input())):
+    n,d=map(int,input().strip().split())
+    arr=list(map(int,input().strip().split()))[:n]
+    
+    countr=0
+    countnr=0
+    for x in arr:
+        if(x<=9 or x>=80):
+            countr+=1
+        else:
+            countnr+=1
+
+    val=math.ceil(countnr/d)+math.ceil(countr/d)
+    print(val)
+    
