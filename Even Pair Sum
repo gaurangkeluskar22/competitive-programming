@@ -1,0 +1,26 @@
+
+for i in range(int(input())):
+    a,b=map(int,input().strip().split())
+    odda=0
+    oddb=0
+    evena=0
+    evenb=0
+    
+    if(a%2==0):
+        odda=a//2
+        evena=a//2
+    else:
+        evena=a//2
+        odda=evena+1
+
+    if(b%2==0):
+        oddb=b//2
+        evenb=b//2
+    else:
+        evenb=b//2
+        oddb=evenb+1
+        
+
+    print((odda*oddb)+(evena*evenb))
+    
+
