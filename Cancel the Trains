@@ -1,0 +1,19 @@
+try:
+    for i in range(int(input())):
+        n,m=map(int,input().strip().split())
+        arrn=list(map(int,input().strip().split()))[:n]
+        arrm=list(map(int,input().strip().split()))[:m]
+        count=0
+        if(n>m):
+            for x in arrn:
+                if(x in arrm):
+                    count+=1
+        else:
+            for l in arrm:
+                if(l in arrn):
+                    count+=1
+
+        print(count)
+except:
+    pass
+    
