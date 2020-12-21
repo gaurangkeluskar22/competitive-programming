@@ -1,0 +1,28 @@
+try:
+    for i in range(int(input())):
+        n=int(input())
+        string=str(input())
+
+        count=0
+        for i in string:
+            if(i=='1'):
+                count+=1
+
+        val=((120-n)+count)/120
+        val*=100
+        if(val>=75):
+            print("YES")
+        else:
+            print("NO")
+
+except:
+    pass
+            
+
+
+                
+        
+    
+    
+
+
