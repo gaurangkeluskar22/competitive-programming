@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+#define ll long long int 
+int main() {
+	ll n,k,count=0;
+	cin>>n>>k;
+	while(1){
+	    ll last=n%10;
+	    if(last==0){
+	        n=n/10;
+	    }
+	    else{
+	        n-=1;
+	    }
+	    count+=1;
+	    if(count==k){
+	        break;
+	    }
+	}
+	cout<<n<<endl;
+	return 0;
+}
