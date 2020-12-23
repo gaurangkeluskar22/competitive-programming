@@ -1,0 +1,21 @@
+# cook your dish here
+t=int(input())
+for i in range(t):
+    n=int(input())
+    arr=list(map(int,input().strip().split()))[:n]
+    left=0
+    right=n-1
+    ans=[0]*n
+    for j in range(0,n):
+        if(j%2==0):
+            ans[j]=arr[left]
+            left+=1
+        else:
+            ans[j]=arr[right]
+            right-=1
+    
+    for t in ans:
+        print(t,end=" ");
+    print()
+    
+        
