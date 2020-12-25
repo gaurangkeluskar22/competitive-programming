@@ -1,0 +1,15 @@
+# cook your dish here
+t=int(input())
+for i in range(t):
+    string=str(input())
+    arr=[]
+    for i in range(0,len(string)):
+        if(i==0):
+            arr.append(int(string[i+1:]))
+        elif(i==len(string)-1):
+            arr.append(int(string[:i]))
+        else:
+            arr.append(int(string[:i]+string[i+1:]))
+    
+    print(min(arr))
+        
