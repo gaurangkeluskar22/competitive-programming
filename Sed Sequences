@@ -1,0 +1,10 @@
+
+for i in range(int(input())):
+    n,k=map(int,input().strip().split())
+    arr=list(map(int,input().strip().split()))[:n]
+
+    if(sum(arr)%k==0):
+        print(0)
+    else:
+        print(1)
+    
