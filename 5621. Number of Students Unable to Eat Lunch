@@ -1,0 +1,41 @@
+class Solution {
+public:
+    int countStudents(vector<int>& students, vector<int>& sandwiches) {
+        queue<int> studentq;
+        queue<int> sandwichq;
+        int count=0;
+        for(auto it:students){
+            studentq.push(it);
+        }
+        for(auto it:sandwiches){
+            sandwichq.push(it);
+        }
+        
+        while(true){
+            int studentfront=studentq.front();
+            int sandwichfront=sandwichq.front();
+            if(studentfront==sandwichfront){
+                studentq.pop();
+                sandwichq.pop();
+                count=0;
+            }
+            else{
+                studentq.pop();
+                studentq.push(studentfront);
+                count+=1;
+            }
+            if(count==studentq.size()){
+                break;
+                count=0;
+            }
+            if(studentq.size()==0){
+                break;
+            }
+            cout<<"student len:"<<studentq.size()<<"sandwich len:"<<sandwichq.size()<<endl;
+        }
+        
+        
+        return studentq.size();
+        
+    }
+};
