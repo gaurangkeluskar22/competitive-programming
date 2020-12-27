@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+#include <bits/stdc++.h>
+
+int main() {
+    int t;
+    cin>>t;
+    int keys[]={98, 57, 31, 45, 46};
+    while(t--){
+        string s;
+        cin>>s;
+        for(int i=0;i<s.length();i++){
+            int val=keys[i]+s[i]-'A';
+            cout<<char((val%26)+'A');
+        }
+        cout<<endl;
+    }
+	return 0;
+}
