@@ -1,0 +1,24 @@
+try:
+    
+    string=list(map(str,input().strip().split()))
+    minlen=len(string[0])
+    mincontext=string[0]
+    
+    for i in range(1,len(string)):
+        if(minlen>len(string[i])):
+            mincontext=string[i]
+            minlen=len(string[i])
+        
+    for j in range(0,len(string)):
+        if(j==0):
+            print(mincontext,end=" ")
+            print(string[j],end=" ")
+        else:
+            print(mincontext,end=" ")
+            print(string[j],end=" ")
+        
+    print(mincontext)
+    
+except:
+    pass
+        
