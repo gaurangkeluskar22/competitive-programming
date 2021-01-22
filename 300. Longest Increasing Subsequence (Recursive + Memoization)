@@ -1,0 +1,31 @@
+class Solution {
+public:
+    int lis(int prev,int curr,vector<int>& nums,vector<vector<int>>& dp){
+        // base condition
+        if(curr==nums.size()){
+            return 0;
+        }
+        
+        if(prev!=-1 && dp[prev][curr]!=0){
+            return dp[prev][curr];
+        }
+            
+        int op1=0;
+        if(prev==-1 || nums[prev]<nums[curr]){
+            op1 = 1+lis(curr,curr+1,nums,dp); 
+        }
+        int op2 = lis(prev,curr+1,nums,dp);
+        
+        if(prev!=-1){
+            dp[prev][curr] = max(op1,op2);
+        }
+        return max(op1,op2);
+    }
+    
+    int lengthOfLIS(vector<int>& nums) {
+        int prev=-1,curr=0;
+        vector<vector<int>> dp(nums.size(),vector<int>(nums.size(),0));
+        return lis(prev,curr,nums,dp); 
+    }
+    
+};
