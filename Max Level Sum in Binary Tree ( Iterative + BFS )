@@ -1,0 +1,22 @@
+int maxLevelSum(Node* root) {
+    queue<Node*> q;
+    vector<int> ans;
+    q.push(root);
+    while(!q.empty()){
+        int sum=0;
+        int len=q.size();
+        for(int i=0;i<len;i++){
+            Node* front=q.front();
+            q.pop();
+            if(front->left!=NULL){
+                q.push(front->left);
+            }
+            if(front->right!=NULL){
+                q.push(front->right);
+            }
+            sum+=front->data;
+        }
+        ans.push_back(sum);
+    }
+    return *max_element(ans.begin(),ans.end());
+}
