@@ -1,0 +1,20 @@
+int countLeaves(Node* root)
+{
+    stack<Node*> s;
+    s.push(root);
+    int count=0;
+    while(!s.empty()){
+        Node* front=s.top();
+        s.pop();
+        if(front->left==NULL && front->right==NULL){
+            count+=1;
+        }
+        if(front->right!=NULL){
+            s.push(front->right);
+        }
+        if(front->left!=NULL){
+            s.push(front->left);
+        }
+    }
+    return count;
+}
