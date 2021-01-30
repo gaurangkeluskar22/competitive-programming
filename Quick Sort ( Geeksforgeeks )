@@ -1,0 +1,35 @@
+
+void quickSort(int arr[], int low, int high)
+{
+    if(low<=high){
+       int position=partition(arr,low,high);
+        quickSort(arr,low,position-1);
+        quickSort(arr,position+1,high);
+   }
+}
+
+int partition (int arr[], int low, int high)
+{
+   int i=low,j=high;
+    int pivot=arr[low];
+    
+    while(i<=j){
+        while(arr[i]<=pivot){
+            i+=1;
+        }
+    
+        while(arr[j]>pivot){
+            j-=1;
+        }
+        if(i<=j){
+            swap(arr[i],arr[j]);
+            i+=1;
+            j-=1;
+        }
+    }
+    
+    swap(arr[low],arr[j]);
+    
+    return j;
+    
+}
