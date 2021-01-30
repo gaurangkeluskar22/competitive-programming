@@ -1,0 +1,15 @@
+try:
+    for t in range(int(input())):
+        x,y,z=map(int,input().strip().split())
+
+        if(x+y==z):
+            print("YES")
+        elif(x+z==y):
+            print("YES")
+        elif(y+z==x):
+            print("YES")
+        else:
+            print("NO")
+
+except:
+    pass
