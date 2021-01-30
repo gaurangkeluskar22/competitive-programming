@@ -1,0 +1,27 @@
+from collections import Counter
+try:
+    for t in range(int(input())):
+        num=int(input())
+        arr=list(map(int,input().strip().split()))[:num]
+        arr=sorted(arr)
+
+        mid=(0+len(arr))//2
+        first=arr[:mid]
+        second=arr[mid:]
+
+        start=0
+        end=len(arr)-1
+        final=0
+        if(len(arr)%2!=0):
+            final=mid+1
+        else:
+            final=mid
+        for i in range(0,final):
+            if(i!=mid):
+                print(arr[end],end=" ")
+                end-=1
+            print(arr[i],end=" ")
+        
+
+except:
+    pass
