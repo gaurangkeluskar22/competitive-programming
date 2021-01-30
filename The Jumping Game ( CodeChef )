@@ -1,0 +1,29 @@
+from collections import Counter
+try:
+    string=str(input())
+    arr=[0,0]
+
+    for i in string:
+        if(i=='U'):
+            val=arr[1]
+            arr[1]=val+1
+
+        elif(i=='D'):
+            val=arr[1]
+            arr[1]=val-1
+
+        elif(i=='L'):
+            val=arr[0]
+            arr[0]=val+1
+
+        elif(i=='R'):
+            val=arr[0]
+            arr[0]=val-1
+
+    if(arr[0]==0 and arr[1]==0):
+        print("true")
+    else:
+        print("false")
+
+except:
+    pass
