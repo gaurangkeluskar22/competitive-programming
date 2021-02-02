@@ -1,0 +1,27 @@
+int maxNodeLevel(Node *root)
+{
+    vector<int> ans;
+    queue<Node*> q;
+    q.push(root);
+    int max=0,c=0,l=0;
+
+    while(!q.empty()){
+        int len=q.size();
+        if(len>max){
+            max=len;
+            c=l;
+        }
+        for(int i=0;i<len;i++){
+            Node* front=q.front();
+            q.pop();
+            if(front->left!=NULL){
+                q.push(front->left);
+            }
+            if(front->right!=NULL){
+                q.push(front->right);
+            }
+        }
+        l++;
+    }
+    return c; 
+}
