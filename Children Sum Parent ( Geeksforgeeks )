@@ -1,0 +1,30 @@
+
+// Return 1 if all the nodes in the tree satisfy the given property. Else return 0
+int isSumProperty(Node *root)
+{
+    queue<Node*> q;
+    q.push(root);
+    bool check=true;
+    while(!q.empty()){
+        int len=q.size();
+        int sum=0;
+
+            Node* front=q.front();
+            q.pop();
+            if(front->left!=NULL){
+                q.push(front->left);
+                sum+=front->left->data;
+            }
+            if(front->right!=NULL){
+                q.push(front->right);
+                sum+=front->right->data;
+            }
+            if(front->left!=NULL || front->right!=NULL){
+                if(sum!=front->data){
+                    return 0;
+                }
+            }
+    }
+
+    return 1;    
+}
