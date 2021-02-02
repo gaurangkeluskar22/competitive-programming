@@ -1,0 +1,45 @@
+struct Node {
+    int data;
+    Node *left;
+    Node *right;
+
+    Node(int val) {
+        data = val;
+        left = right = NULL;
+    }
+};
+*/
+
+class Solution{
+public:
+    vector<int> first;
+    vector<int> second;
+    vector<int> travel(Node* root,vector<int>& temp){
+        if(root==NULL){
+            return temp;
+        }
+        temp.push_back(root->data);
+        travel(root->left,temp);
+        travel(root->right,temp);
+        return temp;
+    }
+    vector <int> findCommon(Node *root1, Node *root2)
+    {
+        vector<int> temp,ans;
+        travel(root1,temp);
+        travel(root2,temp);
+        map<int,int> m;
+        for(auto it:temp){
+            m[it]++;
+        }
+        
+        for(auto it:m){
+            if(it.second>1){
+                ans.push_back(it.first);
+            }
+        }
+        sort(ans.begin(),ans.end());
+        return ans;
+    }
+};
+
