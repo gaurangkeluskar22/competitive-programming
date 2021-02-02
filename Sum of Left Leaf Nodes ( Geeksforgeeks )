@@ -1,0 +1,23 @@
+int leftLeavesSum(Node *root)
+{
+    if(root==NULL){
+        return 0;
+    }
+     queue<Node*> q;
+     q.push(root);
+     int sum=0;
+     while(!q.empty()){
+        Node* front=q.front();
+        q.pop();
+        if(front->left!=NULL){
+            q.push(front->left);
+            if(front->left->left==NULL && front->left->right==NULL){
+                sum+=front->left->data;
+            }
+        }
+        if(front->right!=NULL){
+            q.push(front->right);
+        }
+     }
+     return sum;
+}
