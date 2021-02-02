@@ -1,0 +1,17 @@
+
+// return the Kth largest element in the given BST rooted at 'root'
+void travel(Node* root,vector<int>& temp){
+    if(root==NULL){
+        return;
+    }
+    temp.push_back(root->data);
+    travel(root->left,temp);
+    travel(root->right,temp);
+}
+int kthLargest(Node *root, int K)
+{
+    vector<int> temp;
+    travel(root,temp);
+    sort(temp.begin(),temp.end(),greater <>());
+    return temp[K-1];
+}
