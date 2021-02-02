@@ -1,0 +1,35 @@
+
+/*Structure of the node of the binary tree is as
+struct Node
+{
+    int data;
+    struct Node* left;
+    struct Node* right;
+};
+*/
+// function should return the sum of all 
+// right leaf nodes
+int rightLeafSum(Node* root)
+{
+    if(root==NULL){
+        return 0;
+    }
+     queue<Node*> q;
+     q.push(root);
+     int sum=0;
+     while(!q.empty()){
+        Node* front=q.front();
+        q.pop();
+        if(front->left!=NULL){
+            q.push(front->left);
+        }
+        if(front->right!=NULL){
+            q.push(front->right);
+            
+            if(front->right->left==NULL && front->right->right==NULL){
+                sum+=front->right->data;
+            }
+        }
+     }
+     return sum;
+}
