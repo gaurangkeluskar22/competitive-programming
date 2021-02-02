@@ -1,0 +1,25 @@
+int countNonLeafNodes(Node* root)
+{
+    if(root==NULL){
+        return 0;
+    }
+    int count=0;
+    queue<Node*> q;
+    q.push(root);
+    while(!q.empty()){
+        Node* front=q.front();
+        q.pop();
+        if(front->left!=NULL || front->right!=NULL){
+            count+=1;
+        }
+    
+        if(front->left!=NULL){
+            q.push(front->left);
+        }
+        if(front->right!=NULL){
+            q.push(front->right);
+        }
+    
+    }
+    return count;
+}
