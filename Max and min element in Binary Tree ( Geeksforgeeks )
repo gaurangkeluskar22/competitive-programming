@@ -1,0 +1,25 @@
+// Returns maximum value in a given Binary Tree
+
+void travel(node* root,vector<int>& ans){
+    if(root==NULL){
+        return;
+    }
+    ans.push_back(root->data);
+    travel(root->left,ans);
+    travel(root->right,ans);
+}
+
+int findMax(struct node* root)
+{
+    vector<int> ans;
+    travel(root,ans);
+    return *max_element(ans.begin(),ans.end());
+}
+
+// Returns minimum value in a given Binary Tree
+int findMin(struct node* root)
+{
+    vector<int> ans;
+    travel(root,ans);
+    return *min_element(ans.begin(),ans.end());
+}
