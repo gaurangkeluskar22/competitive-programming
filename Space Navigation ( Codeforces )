@@ -1,0 +1,46 @@
+import math
+from collections import Counter
+for i in range(int(input())):
+    x,y=map(int,input().strip().split())
+    string=str(input())
+    count_string=dict(Counter(string))
+    #print(count_string)
+
+    first=''
+    second=''
+    if(x>0):
+        first='R'
+    if(x<0):
+        first='L'
+    if(y>0):
+        second='U'
+    if(y<0):
+        second='D'
+
+    x=abs(x)
+    y=abs(y)
+
+    if(first in count_string and second in count_string and first!='' and second!=''):
+        if(count_string[first]>=x and count_string[second]>=y):
+            print("YES")
+        else:
+            print("NO")
+            
+    elif(x==0 or y==0):
+        if(x==0):
+            if(second in count_string and count_string[second]>=y):
+                print("YES")
+            else:
+                print("NO")
+
+        if(y==0):
+            if(first in count_string and count_string[first]>=x):
+                print("YES")
+            else:
+                print("NO")
+            
+    else:
+        print("NO")
+        
+        
+        
