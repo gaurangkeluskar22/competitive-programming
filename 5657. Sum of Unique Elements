@@ -1,0 +1,18 @@
+class Solution {
+public:
+    int sumOfUnique(vector<int>& nums) {
+        map<int,int> m;
+        for(auto it:nums){
+            m[it]++;
+        }
+        
+        int sum=0;
+        for(auto it:m){
+            cout<<it.first<<" "<<it.second<<endl;
+            if(it.second==1){
+                sum+=it.first;
+            }
+        }
+        return sum;
+    }
+};
