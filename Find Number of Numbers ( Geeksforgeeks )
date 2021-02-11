@@ -1,0 +1,14 @@
+# Your task is to complete this function
+# Function should return an integer
+from collections import Counter
+def num(arr, n, k):
+    string=""
+    for i in arr:
+        string+=str(i)
+    
+    count=dict(Counter(string))
+    
+    if(str(k) in count):
+        return count[str(k)]
+    else:
+        return 0
