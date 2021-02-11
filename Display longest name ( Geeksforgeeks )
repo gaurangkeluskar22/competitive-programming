@@ -1,0 +1,12 @@
+class Solution:
+    def longest(self, names, n):
+    	longet_name=""
+    	maxi=0
+    	for i in names:
+    	    if(len(i)>maxi):
+    	        maxi=len(i)
+    	        longest_name=i
+    	
+    	return longest_name
+    	
+    	
