@@ -1,0 +1,15 @@
+
+pair<long long, long long> getMinMax(long long a[], int n) {
+    long long small=LLONG_MAX;
+    long long maxi=LLONG_MIN;
+    
+    for(int i=0;i<n;i++){
+        small=min(small,a[i]);
+        maxi=max(maxi,a[i]);
+    }
+    pair<long long,long long> p;
+    p.first=small;
+    p.second=maxi;
+    return p;
+    
+}
