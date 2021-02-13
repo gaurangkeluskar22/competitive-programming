@@ -1,0 +1,40 @@
+import math
+from collections import Counter
+def check(m,x):
+    count=0
+    for i in m:
+        if(i<x and m[i]<m[x]):
+            count+=1
+
+    return count==x-1
+    
+for x in range(int(input())):
+    num=int(input())
+    w=list(map(int,input().strip().split()))[:num]
+    l=list(map(int,input().strip().split()))[:num]
+
+    m={}
+    s={}
+    for i in range(0,len(w)):
+        m[w[i]]=i
+        s[w[i]]=l[i]
+
+    count=0
+    w=sorted(w)
+    for i in range(1,len(w)):
+        while(not check(m,w[i])):
+            count+=1
+            m[w[i]]+=s[w[i]]
+
+    print(count)
+        
+        
+        
+        
+            
+
+    
+        
+        
+        
+
