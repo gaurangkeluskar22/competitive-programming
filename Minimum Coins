@@ -1,0 +1,27 @@
+import math
+from collections import Counter
+
+
+num=int(input())
+count=0
+while(num>0):
+    if(num>5 and num>10):
+        val=num//10
+        num=num%10
+        count+=val
+    elif(num>=5 and num<10):
+        val=num//5
+        num=num%5
+        count+=val
+    else:
+        count+=num
+        num-=num
+print(count)
+        
+        
+    
+    
+        
+        
+        
+
