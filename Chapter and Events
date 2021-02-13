@@ -1,0 +1,16 @@
+import math
+from collections import Counter
+
+for x in range(int(input())):
+    num,x,days=map(int,input().strip().split())
+    arr=list(map(int,input().strip().split()))[:num]
+    total=sum(arr)
+    if(total<x):
+        print(0)
+    else:
+        val=total//x
+        if(val<days):
+            print(val)
+        else:
+            print(days)
+        
