@@ -1,0 +1,15 @@
+int majorityElement(int a[], int size)
+{
+    
+    int peak=size/2;
+    map<int,int> m;
+    for(int i=0;i<size;i++){
+        m[a[i]]++;
+    }
+    for(auto it:m){
+        if(it.second>peak){
+            return it.first;
+        }
+    }
+    return -1;
+}
