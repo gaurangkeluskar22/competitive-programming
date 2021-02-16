@@ -1,0 +1,28 @@
+class Solution {
+public:
+    void travel(string S,int i,vector<string>& result){
+        if(i==S.length()){
+            result.push_back(S);
+            return;
+        }
+        if(S[i]>='a' && S[i]<='z'){
+            travel(S,i+1,result);
+            S[i]='A'+S[i]-'a';
+            travel(S,i+1,result);
+        }
+        else if(S[i]>='A' && S[i]<='Z'){
+            travel(S,i+1,result);
+            S[i]='a'+S[i]-'A';
+            travel(S,i+1,result);
+        }
+        else{
+            travel(S,i+1,result);
+        }
+    }
+    vector<string> letterCasePermutation(string S) {
+        vector<string> result;
+        travel(S,0,result);
+        return result;
+    }
+    
+};
