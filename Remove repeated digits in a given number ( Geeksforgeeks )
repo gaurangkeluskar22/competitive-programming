@@ -1,0 +1,12 @@
+for _ in range(int(input())):
+    num=input()
+    stack=[]
+    stack.append(num[0])
+    for i in num:
+        if(stack and stack[-1]!=i):
+            stack.append(i)
+    
+    print(''.join(stack))
+            
+        
+            
