@@ -1,0 +1,34 @@
+for _ in range(int(input())):
+    string=str(input())
+    stack=[]
+    ans=""
+    count=0
+    string=string.lower()
+    
+    for i in string:
+        if(len(stack)==0):
+            stack.append(i)
+        else:
+            if(stack[-1]!=i):
+                val=stack[-1]
+                while(stack):
+                    count+=1;
+                    stack.pop(-1)
+                ans+=str(count)
+                ans+=val
+                count=0
+                stack.append(i)
+            else:
+                stack.append(i)
+    
+    
+    if(stack):
+        val=stack[-1]
+        while(stack):
+            count+=1;
+            stack.pop(-1)
+        ans+=str(count)
+        ans+=val
+        count=0
+        
+    print(ans)
