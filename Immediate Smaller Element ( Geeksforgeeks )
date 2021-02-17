@@ -1,0 +1,19 @@
+//User function template for C++
+class Solution{
+public:	
+	void immediateSmaller(int *arr, int n) {
+	    int prev=arr[0];
+	    for(int i=1;i<n;i++){
+	        if(prev>arr[i]){
+	            arr[i-1]=arr[i];
+	            prev=arr[i];
+	        }
+	        else{
+	            arr[i-1]=-1;
+	            prev=arr[i];
+	        }
+	    }
+	    arr[n-1]=-1;
+	}
+
+};
