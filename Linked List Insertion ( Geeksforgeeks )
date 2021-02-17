@@ -1,0 +1,31 @@
+Node *insertAtBegining(Node *head, int newData) {
+    Node* temp=new Node(newData);
+    if(head==NULL){
+        head=temp;
+        return head;
+    }
+    else{
+        temp->next=head;
+        head=temp;
+        return head;
+    }
+    
+}
+
+
+// function appends the data at the end of the list
+Node *insertAtEnd(Node *head, int newData)  {
+   Node* temp=new Node(newData);
+   if(head==NULL){
+       head=temp;
+       return head; 
+   }
+   else{
+       Node* t=head;
+       while(t->next!=NULL){
+           t=t->next;
+       }
+       t->next=temp;
+       return head;
+   }
+}
