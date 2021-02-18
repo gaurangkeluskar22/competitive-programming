@@ -1,0 +1,15 @@
+int chocolates(int arr[], int n)
+{
+    int first=0;
+    int last=n-1;
+    while(first<last){
+        if(arr[first]>arr[last]){
+            first+=1;
+        }
+        else{
+            last-=1;
+        }
+    }
+    return arr[first];
+    
+}
