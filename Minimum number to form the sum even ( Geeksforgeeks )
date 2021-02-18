@@ -1,0 +1,8 @@
+class Solution:
+    def minNum(self, arr, n):
+        total=sum(arr)
+        if(total%2==0):
+            return 2
+        else:
+            return 1
+        
