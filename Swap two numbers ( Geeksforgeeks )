@@ -1,0 +1,14 @@
+class Solution{   
+public:
+    pair<int, int> get(int a, int b){
+        //complete the function here
+        pair<int,int> q;
+        a=a+b;
+        b=a-b;
+        a=a-b;
+        q.first=a;
+        q.second=b;
+        return q;
+        
+    }
+};
