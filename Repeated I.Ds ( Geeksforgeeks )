@@ -1,0 +1,11 @@
+for _ in range(int(input())):
+    num=int(input())
+    arr=list(map(int,input().strip().split()))[:num]
+    temp=[]
+    for i in range(0,num):
+        if(arr[i] not in temp):
+            print(arr[i],end=" ")
+            temp.append(arr[i])
+    
+    print()
+    
