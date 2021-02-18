@@ -1,0 +1,17 @@
+class Solution
+{
+public:
+    int minValueToBalance(int a[], int n)
+    {
+       int first=0,sumfirst=0;
+       int last=n-1,sumsecond=0;
+       while(first<last){
+           sumfirst+=a[first];
+           first+=1;
+           sumsecond+=a[last];
+           last-=1;
+       }
+      
+       return max(sumfirst,sumsecond)-min(sumfirst,sumsecond);
+    }
+};
