@@ -1,0 +1,4 @@
+class Solution:
+    def maxDays(self, arr, n):
+        return max(arr)
+
