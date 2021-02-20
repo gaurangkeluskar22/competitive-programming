@@ -1,0 +1,11 @@
+for _ in range(int(input())):
+    num=int(input())
+    arr=list(map(int,input().strip().split()))[:num]
+    arr=sorted(arr)
+    for i in arr:
+        print(i,end=" ")
+    print()
+    
+        
+    
+    
