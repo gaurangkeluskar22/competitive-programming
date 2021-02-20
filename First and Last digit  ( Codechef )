@@ -1,0 +1,4 @@
+for _ in range(int(input())):
+    string=input()
+    print(int(string[0])+int(string[-1]))
+    
