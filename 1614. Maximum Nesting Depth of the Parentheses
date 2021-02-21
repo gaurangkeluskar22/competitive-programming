@@ -1,0 +1,15 @@
+class Solution:
+    def maxDepth(self, s: str) -> int:
+        res=0
+        depth=0
+        for i in s:
+            if(i=='('):
+                depth+=1
+            
+            elif(i==')'):
+                depth-=1
+            
+            res=max(res,depth)
+        
+        return res
+        
