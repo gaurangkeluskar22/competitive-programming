@@ -1,0 +1,24 @@
+class Solution{
+    public:
+    int findDuplicate(int arr[], int N, int K) 
+    { 
+        map<int,int> m;
+        for(int i=0;i<N;i++){
+            m[arr[i]]++;
+        }
+        vector<int> ans;
+        for(auto it:m){
+            if(it.second==K){
+                ans.push_back(it.first);
+            }
+        }
+        sort(ans.begin(),ans.end());
+        if(ans.size()==0){
+            return -1;
+        }
+        else{
+            return ans[0];
+        }
+    
+    }
+};
