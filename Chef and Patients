@@ -1,0 +1,40 @@
+#include <iostream>
+#define ll long long int
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    ll t;
+    cin>>t;
+    while(t--){
+        ll n;
+        cin>>n;
+        vector<ll> v,sort_v;
+        unordered_map<int,queue<int>> m;
+        ll temp=0;
+        ll ans[n];
+        memset(ans, 0, sizeof(ans));
+        for(ll i=0;i<n;i++){
+            cin>>temp;
+            v.push_back(temp);
+            sort_v.push_back(temp);
+            m[temp].push(i);
+        }
+        sort(sort_v.begin(), sort_v.end(), greater<int>()); 
+        ll count=1;
+        for(auto it:sort_v){
+            ll val=m[it].front();
+            ans[val]=count;
+            count+=1;
+            m[it].pop();
+        }
+        
+        for(ll i=0;i<n;i++){
+            cout<<ans[i]<<" ";
+        }
+        cout<<endl;
+    }
+        
+   return 0;
+}
