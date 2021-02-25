@@ -1,0 +1,24 @@
+/**
+ * class Tree {
+ *     public:
+ *         int val;
+ *         Tree *left;
+ *         Tree *right;
+ * };
+ */
+bool solve(Tree* root, int val) {
+    
+    while(root!=NULL){
+        if(root->val==val){
+            return true;
+        }
+        else if(root->val>val){
+            root=root->left;
+        }
+        else{
+            root=root->right;
+        }
+    }
+    return false;
+
+}
