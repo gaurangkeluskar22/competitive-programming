@@ -1,0 +1,49 @@
+/**
+ * class Tree {
+ *     public:
+ *         int val;
+ *         Tree *left;
+ *         Tree *right;
+ * };
+ */
+
+/**
+ * class LLNode {
+ *     public:
+ *         int val;
+ *         LLNode *next;
+ * };
+ */
+ void inorder(Tree* root,vector<int>& ans){
+     if(root==NULL){
+         return;
+     }
+     inorder(root->left,ans);
+     ans.push_back(root->val);
+     inorder(root->right,ans);
+ }
+
+LLNode* solve(Tree* root) {
+    if(root==NULL){
+        return NULL;
+    }
+    vector<int> ans;
+    inorder(root,ans);
+
+    LLNode* head=NULL;
+    LLNode* itr=NULL;
+    for(auto it:ans){
+        LLNode* temp=new LLNode();
+        temp->val=it;
+        temp->next=NULL;
+        if(head==NULL){
+            head=temp;
+            itr=head;
+        }
+        else{
+            itr->next=temp;
+            itr=itr->next;
+        }
+    }
+    return head;
+}
