@@ -1,0 +1,56 @@
+/**
+ * class Tree {
+ *     public:
+ *         int val;
+ *         Tree *left;
+ *         Tree *right;
+ * };
+ */
+
+/**
+ * class LLNode {
+ *     public:
+ *         int val;
+ *         LLNode *next;
+ * };
+ */
+LLNode* solve(Tree* root) {
+    if(root==NULL){
+        return NULL;
+    }
+    vector<int> ans;
+    queue<Tree*> q;
+    q.push(root);
+    while(!q.empty()){
+        int len=q.size();
+        for(int i=0;i<len;i++){
+            Tree* front=q.front();
+            q.pop();
+            ans.push_back(front->val);
+            if(front->left!=NULL){
+                q.push(front->left);
+            }
+            if(front->right!=NULL){
+                q.push(front->right);
+            }
+        }
+    }
+    
+    LLNode* head=NULL;
+    
+    LLNode* itr=NULL;
+    for(auto it:ans){
+        LLNode* temp=new LLNode();
+        temp->val=it;
+        temp->next=NULL;
+        if(head==NULL){
+            head=temp;
+            itr=head;
+        }
+        else{
+            itr->next=temp;
+            itr=itr->next;
+        }
+    }
+    return head;   
+}
