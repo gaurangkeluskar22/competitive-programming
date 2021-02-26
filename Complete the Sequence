@@ -1,0 +1,12 @@
+dp=[0]*100
+dp[0]=1
+dp[1]=2
+dp[2]=3
+
+for i in range(3,100):
+    dp[i]=dp[i-1]+dp[i-3]
+    
+for t in range(int(input())):
+    num=int(input())
+    print(dp[num-1])
+    
