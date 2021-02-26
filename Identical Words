@@ -1,0 +1,15 @@
+for t in range(int(input())):
+    s1,s2,s3=map(str,input().strip().split())
+    s1=sorted(s1)
+    s2=sorted(s2)
+    s3=sorted(s3)
+
+    if(s1==s2 and s1==s3 and s2==s3):
+        print("Possible")
+    else:
+        print("Not Possible")
+        
+                
+            
+        
+    
