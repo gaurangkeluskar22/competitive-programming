@@ -1,0 +1,11 @@
+#User function Template for python3
+class Solution:
+
+	def reverseSubArray(self,arr, n, l, r):
+	    temp=arr[l-1:r]
+		for i in range(0,n):
+		    if(i>=l-1 and i<=r-1):
+		        arr[i]=temp[-1]
+		        temp.pop(-1)
+		
+		
