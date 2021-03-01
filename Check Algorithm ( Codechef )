@@ -1,0 +1,23 @@
+from collections import Counter
+for _ in range(int(input())):
+    string=str(input())
+    ans=""
+    ans+=string[0]
+    count=1
+        
+    
+    for i in range(1,len(string)):
+        if(string[i]==string[i-1]):
+            count+=1
+        else:
+            ans+=string[i-1]
+            ans+=str(count)
+            count=1
+            
+    ans+=str(count)
+    if(len(string)>len(ans)):
+        print("YES")
+    else:
+        print("NO")
+    
+        
