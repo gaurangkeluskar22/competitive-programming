@@ -1,0 +1,12 @@
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        temp=[0]*(int(len(nums)+1))
+        
+        for i in nums:
+            temp[i]=1
+        
+        for i in range(0,len(temp)):
+            if(temp[i]==0):
+                return i
+        
+        
