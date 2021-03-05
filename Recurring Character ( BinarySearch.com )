@@ -1,0 +1,11 @@
+class Solution:
+    def solve(self, s):
+        arr=[]
+        for i in range(len(s)):
+            if(s[i] in arr):
+                return i
+            else:
+                arr.append(s[i])
+
+        return -1
+        
