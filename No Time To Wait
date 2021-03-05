@@ -1,0 +1,14 @@
+n,h,x=map(int,input().strip().split())
+arr=list(map(int,input().strip().split()))[:n]
+check=False
+for i in arr:
+    if(i+x>=h):
+        check=True
+        break
+
+if(check):
+    print("YES")
+else:
+    print("NO")
+
+        
