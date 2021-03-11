@@ -1,0 +1,24 @@
+n,m,k=map(int,input().strip().split())
+arr1=list(map(int,input().strip().split()))[:n]
+arr2=list(map(int,input().strip().split()))[:m]
+
+arr1=sorted(arr1)
+arr2=sorted(arr2)
+
+first=0
+second=0
+count=0
+
+while(first<n and second<m):
+    small = arr1[first]-k
+    large = arr1[first]+k
+    if(small<= arr2[second] and arr2[second]<=large):
+        count+=1
+        first+=1
+        second+=1
+    elif(arr2[second]<small):
+        second+=1
+    else:
+        first+=1
+        
+print(count)        
