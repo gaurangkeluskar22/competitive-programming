@@ -1,0 +1,59 @@
+#include <iostream>
+#include <bits/stdc++.h>
+#include <cmath>
+#define ll long long int
+
+using namespace std;
+
+int main()
+{
+    ll t;
+    cin >> t;
+    while (t--)
+    {
+        ll n;
+        cin >> n;
+        ll size = (n * 2) - 1;
+        ll arr[size][size];
+        memset(arr, -1, sizeof(arr));
+
+        ll temp = n;
+        ll start = 1, end = size - 1;
+        for (ll i = 0; i < size; i++)
+        {
+            for (ll j = start; j < end; j++)
+            {
+                arr[i][j] = temp;
+                arr[size - i - 1][j] = temp;
+            }
+            temp -= 1;
+            start += 1;
+            end -= 1;
+        }
+
+        for (ll i = 0; i < size; i++)
+        {
+            for (ll j = 0; j < size; j++)
+            {
+                if (i == size / 2 && j == size / 2)
+                {
+                    cout << "1"
+                         << " ";
+                }
+                else if (arr[i][j] == -1)
+                {
+                    cout << "|"
+                         << " ";
+                }
+                else
+                {
+                    cout << arr[i][j] << " ";
+                }
+            }
+            cout << "\n";
+        }
+        cout << "\n";
+    }
+
+    return 0;
+}
