@@ -1,0 +1,11 @@
+class Solution:
+    def solve(self, prices, k):
+        prices=sorted(prices)
+        count=0
+        for i in prices:
+            if(i<=k):
+                count+=1
+                k-=i
+        
+        return count
+        
