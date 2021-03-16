@@ -1,0 +1,11 @@
+a=list(map(int,input().strip().split()))
+b=list(map(int,input().strip().split()))
+counta=0
+countb=0
+for i in range(0,len(a)):
+    if(a[i]>b[i]):
+        counta+=1
+    elif(a[i]<b[i]):
+        countb+=1
+
+print(counta,countb)
