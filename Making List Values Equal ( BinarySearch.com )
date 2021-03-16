@@ -1,0 +1,8 @@
+class Solution:
+    def solve(self, nums):
+        nums=sorted(nums)
+        if(len(nums)<=1):
+            return 0
+        else:
+            return nums[-1]-nums[0]
+        
