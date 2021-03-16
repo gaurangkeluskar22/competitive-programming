@@ -1,0 +1,8 @@
+class Solution:
+    def solve(self, nums):
+        nums=sorted(nums)
+        if(nums[-1]>(nums[-2]*2)):
+            return True
+        else:
+            return False
+        
