@@ -1,0 +1,10 @@
+class Solution:
+    def solve(self, n):
+        if(n==0):
+            return False
+        val=(math.log(n,2))
+        if(val==round(val)):
+            return True
+        else:
+            return False
+        
