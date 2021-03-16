@@ -1,0 +1,9 @@
+class Solution:
+    def solve(self, nums):
+        ans=0
+        count=Counter(nums)
+        for i in count:
+            ans=max(ans,count[i])
+        
+        return ans
+        
