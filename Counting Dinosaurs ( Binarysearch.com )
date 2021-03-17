@@ -1,0 +1,9 @@
+class Solution:
+    def solve(self, animals, dinosaurs):
+        ans=0
+        s=set(dinosaurs)
+        for i in s:
+            ans+=animals.count(i)
+
+        return ans
+        
