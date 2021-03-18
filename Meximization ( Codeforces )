@@ -1,0 +1,24 @@
+from collections import Counter
+for _ in range(int(input())):
+    n=int(input())
+    a=list(map(int,input().strip().split()))[:n]
+    temp=[0]*101
+    for i in a:
+        temp[i]=a.count(i)
+ 
+    size=len(a)
+    ans=[]
+    itr=0
+    while(size>0):
+        if(temp[itr]>0):
+            ans.append(itr)
+            temp[itr]-=1
+            size-=1
+ 
+        itr+=1
+        if(itr==101):
+            itr=0
+ 
+    for i in ans:
+        print(i,end=" ")
+    print()
