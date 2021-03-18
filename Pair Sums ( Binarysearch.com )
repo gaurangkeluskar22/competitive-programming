@@ -1,0 +1,18 @@
+int solve(vector<int>& nums) {
+    int countodd=0;
+    int counteven=0;
+    for(int i=0;i<nums.size();i++){
+        if(nums[i]%2==0){
+            counteven+=1;
+        }
+        else{
+            countodd+=1;
+        }
+    }
+    if(counteven==0 || countodd==0){
+        return 0;
+    }
+    else{
+        return counteven*countodd;
+    }
+}
