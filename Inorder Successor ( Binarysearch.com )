@@ -1,0 +1,26 @@
+/**
+ * class Tree {
+ *     public:
+ *         int val;
+ *         Tree *left;
+ *         Tree *right;
+ * };
+ */
+ void travel(Tree* root,vector<int> & ans){
+     if(root==NULL){
+         return;
+     }
+     travel(root->left,ans);
+     ans.push_back(root->val);
+     travel(root->right,ans);
+ }
+int solve(Tree* root, int t) {
+    vector<int> ans;
+    travel(root,ans);
+    for(int i=0;i<ans.size();i++){
+        if(ans[i]==t){
+            return ans[i+1];
+        }
+    }
+    return 0;
+}
