@@ -1,0 +1,13 @@
+class Solution:
+    def solve(self, nums):
+        zeros=[]
+        digits=[]
+        for i in nums:
+            if(i!=0):
+                digits.append(i)
+            else:
+                zeros.append(i)
+        
+        digits.extend(zeros)
+        return digits
+        
