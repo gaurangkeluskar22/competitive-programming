@@ -1,0 +1,24 @@
+
+
+for _ in range(int(input())):
+  def gcd(a, b):
+    if(a == 0):
+        return b
+    return gcd(b%a, a)
+
+  n=int(input())
+  a=n
+  b=sum([int(i) for i in str(n)])
+  
+  val=gcd(a,b)
+  while(val==1):
+    n=n+1
+    a=n
+    b=sum([int(i) for i in str(n)])
+    val=gcd(a,b)
+  
+  print(n)
+
+
+
+  
