@@ -1,0 +1,24 @@
+class Solution:
+    def numDifferentIntegers(self, word: str) -> int:
+        arr=['0','1','2','3','4','5','6','7','8','9']
+        ans=""
+        data=set()
+        for i in word:
+            if(i in arr):
+                ans+=i
+            else:
+                if(ans!=""):
+                    data.add(int(ans))
+                    ans=""
+        if(ans!=""):
+            data.add(int(ans))
+        
+
+        return len(data)
+    
+        
+                    
+                    
+            
+            
+        
