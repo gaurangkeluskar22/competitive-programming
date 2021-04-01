@@ -1,0 +1,10 @@
+class Solution:
+    def solve(self, nums, k):
+        total=sum(nums)
+        for i in range(0,len(nums)):
+            val=(sum(nums)-nums[i])/(len(nums)-1)
+            if(val==k):
+                return True
+    
+        return False
+        
