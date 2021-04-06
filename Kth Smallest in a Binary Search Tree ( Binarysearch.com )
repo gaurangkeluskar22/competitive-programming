@@ -1,0 +1,22 @@
+/**
+ * class Tree {
+ *     public:
+ *         int val;
+ *         Tree *left;
+ *         Tree *right;
+ * };
+ */
+ void travel(Tree* root,vector<int>& temp){
+     if(root==NULL){
+         return;
+     }
+     travel(root->left,temp);
+     temp.push_back(root->val);
+     travel(root->right,temp);
+ }
+
+int solve(Tree* root, int k) {
+    vector<int> temp;
+    travel(root,temp);
+    return temp[k];
+}
