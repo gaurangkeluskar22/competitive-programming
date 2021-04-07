@@ -1,0 +1,25 @@
+class Solution:
+    def halvesAreAlike(self, s: str) -> bool:
+        arr=['a', 'e', 'i', 'o', 'u']
+        s=s.lower()
+        half=len(s)//2
+        a=s[:half]
+        b=s[half:]
+        print(a,b)
+        countva=0
+        countvb=0
+        for i in a:
+            if(i in arr):
+                countva+=1
+        
+        for j in b:
+            if(j in arr):
+                countvb+=1
+                
+        if(countva==countvb):
+            return True
+        else:
+            return False
+        
+        
+        
