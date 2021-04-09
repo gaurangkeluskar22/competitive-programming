@@ -1,0 +1,30 @@
+class Solution:
+    def solve(self, n):
+        string=str(bin(n))[2:]
+        i=0
+        count=0
+        ans=[]
+        while(i<len(string)):
+            if(string[i]=='1'):
+                count+=1
+                i+=1
+                for t in range(i,len(string)):
+                    if(string[t]=='1'):
+                        count+=1
+                        i+=1
+                    else:
+                        ans.append(count)
+                        count=0
+                        break
+            else:
+                i+=1
+        if(count>0):
+            ans.append(count)
+        if(len(ans)!=0):
+            return max(ans)
+        else:
+            return 0
+                        
+
+
+        
