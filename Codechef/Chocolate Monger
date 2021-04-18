@@ -1,0 +1,8 @@
+for _ in range(int(input())):
+  total,num=map(int,input().strip().split())
+  arr=list(map(int,input().strip().split()))[:total]
+  set1=len(set(arr))
+  if(len(arr)-set1 >= num):
+    print(set1)
+  else:
+    print(len(arr)-num)
