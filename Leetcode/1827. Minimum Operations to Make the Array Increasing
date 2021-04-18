@@ -1,0 +1,16 @@
+class Solution:
+    def minOperations(self, nums: List[int]) -> int:
+        prev_ele=0
+        next_ele=1
+        count=0
+        while(next_ele!=len(nums)):
+            if(nums[prev_ele]>=nums[next_ele]):
+                val=(nums[prev_ele]-nums[next_ele])+1
+                nums[next_ele]+=val
+                count+=val
+
+            prev_ele+=1
+            next_ele+=1
+            
+        return count
+        
