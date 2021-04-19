@@ -1,0 +1,4 @@
+for _ in range(int(input())):
+  n,k = list(map(int,input().split()))
+  m = 10**9+7
+  print(pow(n,k,m))
