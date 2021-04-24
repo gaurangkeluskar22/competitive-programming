@@ -1,0 +1,11 @@
+n=int(input())
+arr1=list(map(int,input().strip().split()))[:n]
+arr2=list(map(int,input().strip().split()))[:n]
+val1=max(arr1)
+val2=min(arr2)
+ 
+if(val1<=val2):
+  print((val2-val1)+1)
+ 
+else:
+  print(0)
