@@ -1,0 +1,15 @@
+n=int(input())
+count_q=0
+total=n
+for i in range(n):
+    m,p=map(int,input().strip().split())
+    if(m>=3 and p>=3):
+        if(m==10 or p==10):
+            avg=(m+p)/2
+            if(avg>=7.5):
+                count_q+=1
+    
+if(((count_q/total)*100)>=50):
+    print("Genius")
+else:
+    print("Not Genius Yet")
