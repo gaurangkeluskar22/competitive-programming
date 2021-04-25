@@ -1,0 +1,7 @@
+for _ in range(int(input())):
+  x,y,x1,y1,d=map(int,input().strip().split())
+  
+  if(min(x/x1,y/y1)>=d):
+    print("Yes")
+  else:
+    print("No")
