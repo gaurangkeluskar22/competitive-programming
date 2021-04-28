@@ -1,0 +1,11 @@
+class Solution:
+    def solve(self, n):
+        ans=[]
+        n=str(n)
+        for i in range(0,len(n)):
+            if(int(n)>0):
+                ans.append(int(n[0:i]+'5'+n[i:]))
+            else:
+                ans.append(int(n[0:i+1]+'5'+n[i+1:]))
+        print(ans)
+        return max(ans)
