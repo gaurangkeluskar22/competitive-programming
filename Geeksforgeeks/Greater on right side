@@ -1,0 +1,14 @@
+#User function Template for python3
+class Solution:
+
+	def nextGreatest(self,arr, n):
+	    ans=[]
+	    maxi=-1
+	    for i in range(len(arr)-1,-1,-1):
+	        temp=arr[i];
+	        arr[i]=maxi;
+	        if(temp>maxi):
+	            maxi=temp
+	   
+	   
+	          
