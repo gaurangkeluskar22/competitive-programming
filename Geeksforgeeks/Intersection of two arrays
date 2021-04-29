@@ -1,0 +1,10 @@
+class Solution:
+    def NumberofElementsInIntersection(self,a, b, n, m):
+        count=0
+        a=list(set(a))
+        b=list(set(b))
+        for i in a:
+            if(i in b):
+                count+=1
+                
+        return count
