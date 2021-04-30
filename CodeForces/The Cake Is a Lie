@@ -1,0 +1,11 @@
+for _ in range(int(input())):
+  n,m,k=map(int,input().strip().split())
+  count=0
+  count+=m-1
+  val=(n-1)
+  val*=m
+  count+=val
+  if(count==k):
+    print("YES")
+  else:
+    print("NO")
