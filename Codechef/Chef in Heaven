@@ -1,0 +1,23 @@
+for _ in range(int(input())):
+  n=int(input())
+  string=input()
+  count0=0
+  count1=0
+  flag=False
+  for i in string:
+    if(i=='1'):
+      count1+=1
+    else:
+      count0+=1
+
+    if(count0<=count1):
+      flag=True
+      break
+    else:
+      pass
+
+  if(flag):
+    print("YES")
+  else:
+    print("NO")
+  
