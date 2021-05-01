@@ -1,0 +1,18 @@
+for _ in range(int(input())):
+  n,sar,ani=map(int,input().strip().split())
+  countsar=0
+  countani=0
+  arr=['E','Q','U','I','N','O','X']
+  for i in range(0,n):
+    string=input()
+    if(string[0] in arr):
+      countsar+=sar
+    else:
+      countani+=ani
+
+  if(countani==countsar):
+    print("DRAW")
+  elif(countani>countsar):
+    print("ANURADHA")
+  else:
+    print("SARTHAK")
