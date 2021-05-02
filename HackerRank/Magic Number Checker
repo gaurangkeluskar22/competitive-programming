@@ -1,0 +1,9 @@
+for _ in range(int(input())):
+    num=int(input())
+    num=abs(num)
+    n1=str(num)
+    n1=int(n1[::-1])
+    if((num+n1) %2 ==0):
+        print(1)
+    else:
+        print(0)
