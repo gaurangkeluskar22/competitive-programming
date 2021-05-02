@@ -1,0 +1,17 @@
+for _ in range(int(input())):
+    n=int(input())
+    arr=list(map(int,input().strip().split()))[:n]
+    
+    for i in range(0,len(arr)):
+        arr[i]+=96
+    
+
+    anseven=0
+    ansodd=0
+    for i in range(0,len(arr)):
+        if(i%2==0):
+            anseven+=arr[i]
+        else:
+            ansodd+=arr[i]
+
+    print(anseven,ansodd)
