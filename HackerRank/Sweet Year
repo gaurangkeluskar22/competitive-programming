@@ -1,0 +1,23 @@
+num=int(input())
+sumc=0
+for i in str(num):
+    sumc+=int(i)
+
+pall=False
+val=str(num)
+if(val==val[::-1]):
+    pall=True
+else:
+    pall=False
+   
+leap=False
+if(num%4==0):
+    leap=True
+else:
+    leap=False
+    
+
+if(leap and pall and sumc%2==0):
+    print("YES")
+else:
+    print("NO")
