@@ -1,0 +1,42 @@
+for _ in range(int(input())):
+    num=input()
+    dc = {1:'',2:'double ',3:'triple ',4:'quadruple '}
+    dn = {0:'zero ',1:'one ',2:'two ',3:'three ',4:'four ',5:'five ',6:'six ',7:'seven ',8:'eight ',9:'nine '}
+    ans=""
+    arr=[]
+    num1=str(num)
+    arr.append(num[0:4])
+    arr.append(num[4:8])
+    arr.append(num[8:12])
+    
+    #print(arr)
+    
+    count=0
+    for i in arr:
+        count=0
+        for j in range(1,len(i)):
+            if(i[j-1]==i[j]):
+                count+=1
+            else:
+                count+=1
+                ans+=dc[count]
+                ans+=dn[int(i[j-1])]
+                count=0
+        
+        if(count==0):
+            count+=1
+            ans+=dc[count]
+            ans+=dn[int(i[j])]
+            count=0
+            
+        
+        if(count>0):
+            count+=1
+            ans+=dc[count]
+            ans+=dn[int(i[j-1])]
+            count=0
+        
+    
+     
+    print(ans)
+        
