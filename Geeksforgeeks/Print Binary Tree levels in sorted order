@@ -1,0 +1,24 @@
+class Solution
+{
+    public:
+    
+    vector <vector <int>> binTreeSortedLevels (int arr[], int n)
+    {
+        vector<int> temp;
+        vector<vector<int>> ans;
+        int start=0;
+        int last=1;
+        while(start<n){
+            for(int i=start;i<last && i<n;i++){
+                temp.push_back(arr[i]);
+            }
+            sort(temp.begin(),temp.end());
+            ans.push_back(temp);
+            temp.clear();
+            start=last;
+            last*=2;
+            last+=1;
+        }
+        return ans;
+    }
+};
