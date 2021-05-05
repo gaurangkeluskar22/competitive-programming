@@ -1,0 +1,24 @@
+class Solution{
+  public:
+    // Return the Kth smallest element in the given BST
+    void travel(Node* root,vector<int> & ans){
+        if(root==NULL){
+            return;
+        }
+        travel(root->left,ans);
+        ans.push_back(root->data);
+        travel(root->right,ans);
+    }
+    
+    int KthSmallestElement(Node *root, int K)
+    {
+        vector<int> ans;
+        travel(root,ans);
+        if(K>ans.size()){
+            return -1;
+        }
+        else{
+            return ans[K-1];
+        }
+    }
+};
