@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+
+
+class Solution{
+  public:
+  void travel(Node* root,int temp,map<int,int> & m){
+      if(root==NULL){
+          return;
+      }
+        m[temp]+=root->data;
+        travel(root->left,temp-1,m);
+        travel(root->right,temp+1,m);
+  }
+    vector <int> verticalSum(Node *root) {
+        vector<int> ans;
+        map<int,int> m;
+        int temp=0;
+        travel(root,temp,m);
+        for(auto it:m){
+            ans.push_back(it.second);
+        }
+        return ans;
+    }
+};
