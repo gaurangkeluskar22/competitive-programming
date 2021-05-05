@@ -1,0 +1,36 @@
+class Solution
+{
+    public:
+    //Function to return a list of nodes visible from the top view 
+    //from left to right in Binary Tree.
+    void travel(Node* root,int temp,int depth, map<int,pair<int,int>>& m){
+        if(root==NULL){
+            return;
+        }
+        if(m.count(temp)==0){
+            m[temp]=make_pair(root->data,depth);
+        }
+        else{
+            if(m[temp].second>depth){
+                m[temp]=make_pair(root->data,depth);
+            }
+        }
+    
+        travel(root->left,temp-1,depth+1,m);
+        travel(root->right,temp+1,depth+1,m);
+    }
+    
+    vector<int> topView(Node *root)
+    {
+        map<int,pair<int,int>> m;
+        vector<int> ans;
+        int temp=0;
+        int depth=0;
+        travel(root,temp,depth,m);
+        for(auto it:m){
+            ans.push_back(it.second.first);
+        }
+        return ans;
+    }
+
+};
