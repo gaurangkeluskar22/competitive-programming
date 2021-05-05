@@ -1,0 +1,41 @@
+//User function Template for C++
+/*
+Structure of the Node of the tree is 
+struct Node
+{
+    int data;
+    struct Node* left;
+    struct Node* right;
+};*/
+// Your task is to complete this function
+// function shoudl return the required sum
+int minLeafSum(Node* root)
+{
+    if(root==NULL){
+        return 0;
+    }
+	queue<Node*> q;
+	vector<int> ans;
+	q.push(root);
+	while(!q.empty()){
+	    int count=0;
+	    int len=q.size();
+	    for(int i=0;i<len;i++){
+	        Node* front=q.front();
+	        q.pop();
+	        if(front->left){
+	            q.push(front->left);
+	        }
+	        if(front->right){
+	            q.push(front->right);
+	        }
+	        if(front->left==NULL && front->right==NULL){
+	            count+=front->data;
+	        }
+	    }
+	    if(count!=0){
+    	    ans.push_back(count);
+	    }
+	}
+	return ans[0];
+}
