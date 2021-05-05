@@ -1,0 +1,36 @@
+/**
+ * class Tree {
+ *     public:
+ *         int val;
+ *         Tree *left;
+ *         Tree *right;
+ * };
+ */
+void travel(Tree* root,int temp,int depth, map<int,pair<int,int>>& m){
+    if(root==NULL){
+        return;
+    }
+    if(m.count(temp)==0){
+        m[temp]=make_pair(root->val,depth);
+    }
+    else{
+        if(m[temp].second>depth){
+            m[temp]=make_pair(root->val,depth);
+        }
+    }
+
+    travel(root->left,temp-1,depth+1,m);
+    travel(root->right,temp+1,depth+1,m);
+}
+
+vector<int> solve(Tree* root) {
+    map<int,pair<int,int>> m;
+    vector<int> ans;
+    int temp=0;
+    int depth=0;
+    travel(root,temp,depth,m);
+    for(auto it:m){
+        ans.push_back(it.second.first);
+    }
+    return ans;
+}
