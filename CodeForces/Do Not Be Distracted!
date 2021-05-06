@@ -1,0 +1,23 @@
+for i in range(int(input())):
+    n=int(input())
+    string=input()
+    ans=[]
+    arr=''
+    for i in string:
+        if(len(arr)==0):
+            arr+=i
+        else:
+            if(arr[-1]!=i):
+                arr+=i
+    flag=False
+    for i in arr:
+        if(i in ans):
+            flag=True
+            break
+        else:
+            ans.append(i)
+ 
+    if(flag):
+        print("NO")
+    else:
+        print("YES")
