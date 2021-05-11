@@ -1,0 +1,30 @@
+vector<int> noSibling(Node* node)
+{
+    queue<Node*> q;
+    vector<int> ans;
+    q.push(node);
+    while(!q.empty()){
+        int len=q.size();
+        for(int i=0;i<len;i++){
+            Node* front = q.front();
+            q.pop();
+            if(front->left){
+                q.push(front->left);
+            }
+            if(front->right){
+                q.push(front->right);
+            }
+            if(front->left==NULL && front->right!=NULL){
+                ans.push_back(front->right->data);
+            }
+            if(front->left!=NULL && front->right==NULL){
+                ans.push_back(front->left->data);
+            }
+        }
+    }
+    if(ans.size()==0){
+        ans.push_back(-1);
+    }
+    sort(ans.begin(),ans.end());
+    return ans;
+}
