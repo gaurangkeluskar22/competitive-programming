@@ -1,0 +1,20 @@
+class Solution:
+    ##Complete this function
+    # Function to calculate the longest consecutive ones
+    def maxConsecutiveOnes(self, N):
+        string = str(bin(N))[2:]
+        #print(string)
+        ans=[]
+        count=0
+        for i in range(len(string)):
+            if(string[i]=='1'):
+                count+=1
+            else:
+                ans.append(count)
+                count=0
+        
+        if(count>0):
+            ans.append(count)
+            
+        #print(ans)
+        return max(ans)
