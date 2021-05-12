@@ -1,0 +1,7 @@
+class Solution:
+    def maximizeMoney(self, N , K):
+        if(N%2==0):
+            return (N*K)//2
+        else:
+            val=N//2
+            return (val+1)*K
