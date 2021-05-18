@@ -1,0 +1,32 @@
+class Solution
+{
+    public:
+
+    void travel(Node* root, vector<int>&ans, int temp){
+        if(root==NULL){
+            return;
+        }  
+        temp+=root->data;
+        if(root->left==NULL and root->right==NULL){
+            ans.push_back(temp);
+        }
+        travel(root->left,ans,temp);
+        travel(root->right,ans,temp);
+    }
+    
+    bool hasPathSum(Node *root, int S) {
+        if(root==NULL){
+            return 0;
+        }
+        vector<int> ans;
+        int temp=0;
+        travel(root,ans,temp);
+        for(auto it:ans){
+            if(it==S){
+                return true;
+            }
+        }
+        
+        return false;
+    }
+};
