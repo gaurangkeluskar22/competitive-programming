@@ -1,0 +1,28 @@
+#include <iostream>
+#include <bits/stdc++.h>
+#define ll long long int
+using namespace std;
+
+int main(){
+    int n;
+    cin>>n;
+    bool array[n+1];
+    memset(array,true,sizeof(array));
+
+    for(int p=2;p*p<=n;p++){
+        if(array[p]==true){
+            for(int i=p*p;i<=n;i+=p){
+                array[i]=false;
+            }
+        }
+    }
+    int count=0;
+    for(int i=2;i<=n;i++){
+        
+        if(array[i]==true){
+            count+=1;
+        }
+    }
+    cout<<count<<endl;
+    return 0;
+}
