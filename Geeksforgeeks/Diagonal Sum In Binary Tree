@@ -1,0 +1,22 @@
+void travel(Node* root,int pos,map<int,int> & m){
+    if(root==NULL){
+        return;
+    }
+    m[pos]+=root->data;
+    travel(root->left,pos-1,m);
+    travel(root->right,pos,m);
+}
+vector <int> diagonalSum(Node* root) {
+    vector<int> ans;
+    if(root==NULL){
+        return ans;
+    }
+    int pos=0;
+    map<int,int> m;
+    travel(root,pos,m);
+    for(auto it:m){
+        ans.push_back(it.second);
+    }
+    reverse(ans.begin(),ans.end());
+    return ans;
+}
