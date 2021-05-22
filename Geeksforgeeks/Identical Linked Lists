@@ -1,0 +1,20 @@
+bool areIdentical(struct Node *head1, struct Node *head2)
+{
+    Node* first=head1;
+    Node* second=head2;
+    
+    if(head1==NULL or head2==NULL){
+        return false;
+    }
+    
+    while(first!=NULL and second!=NULL){
+        if(first->data!=second->data){
+            return false;
+        }
+        else{
+            first=first->next;
+            second=second->next;
+        }
+    }
+    return true;
+}
