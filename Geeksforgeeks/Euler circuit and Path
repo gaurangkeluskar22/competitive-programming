@@ -1,0 +1,22 @@
+class Solution {
+public:
+	int isEularCircuit(int V, vector<int>adj[]){
+	    int odd=0,even=0;
+	    for(int i=0;i<V;i++){
+	        int t=adj[i].size();
+	        if(t%2==0){
+	            even+=1;
+	        }
+	        else{
+	            odd+=1;
+	        }
+	    }
+	    if(even==V){
+	        return 2;
+	    }
+	    if(odd==2){
+	        return 1;
+	    }
+	    return 0;
+	}
+};
