@@ -1,0 +1,21 @@
+class Solution 
+{
+    public:
+    //Function to count paths between two vertices in a directed graph.
+    void DFS(int V, vector<int> adj[], int source, int destination,int& count){
+        if(source==destination){
+            count+=1;
+            return;
+        }
+        for(auto it:adj[source]){
+            DFS(V,adj,it,destination,count);
+        }
+    }
+    
+	int countPaths(int V, vector<int> adj[], int source, int destination)
+	{
+	    int count=0;
+	    DFS(V,adj,source,destination,count);
+	    return count;
+	}
+};
