@@ -1,0 +1,33 @@
+class Solution
+{
+    public:
+    //Function to find the number of 'X' total shapes.
+    void DFS(vector<vector<char>>& grid,int posx,int posy,int n,int m,vector<vector<int>> dir){
+        grid[posx][posy]='O';
+        for(int i=0;i<4;i++){
+            int x = posx+dir[i][0];
+            int y = posy+dir[i][1];
+            if(x>=0 && x<n && y>=0 && y<m && grid[x][y]=='X'){
+                DFS(grid,x,y,n,m,dir);
+            }
+        }
+    }
+    
+    int xShape(vector<vector<char>>& grid) 
+    {
+        vector<vector<int>> dir={{0,1},{1,0},{-1,0},{0,-1}};
+        int count=0;
+        int n=grid.size();
+        int m=grid[0].size();
+    
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                if(grid[i][j]=='X'){
+                  DFS(grid,i,j,n,m,dir);
+                    count+=1;
+                }
+            }
+        }
+        return count;
+    }
+};
