@@ -1,0 +1,13 @@
+n=int(input())
+str1="I hate that "
+str2="I love that "
+ans=""
+for i in range(0,n):
+  if(i%2==0):
+    ans+=str1
+  else:
+    ans+=str2
+
+arr=list(ans.strip().split())
+arr[-1]='it'
+print(' '.join(arr))
