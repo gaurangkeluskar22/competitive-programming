@@ -1,0 +1,21 @@
+class Solution {
+public:
+    vector<vector<int>> ans;
+    void generate(vector<int>& subset,vector<int> nums,int i){
+        if(i==nums.size()){
+            ans.push_back(subset);
+            return;
+        }
+        generate(subset,nums,i+1);
+        
+        subset.push_back(nums[i]);
+        generate(subset,nums,i+1);
+        subset.pop_back();
+    }
+    
+    vector<vector<int>> subsets(vector<int>& nums) {
+        vector<int> subset;
+        generate(subset,nums,0);
+        return ans;
+    }
+};
