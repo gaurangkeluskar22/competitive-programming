@@ -1,0 +1,15 @@
+//Function to generate binary numbers from 1 to N using a queue.
+vector<string> generate(int N)
+{
+	queue<string> q;
+	vector<string> ans;
+	q.push("1");
+	while(N--){
+	    string s=q.front();
+	    q.pop();
+	    ans.push_back(s);
+	    q.push(s+'0');
+	    q.push(s+'1');
+	}
+	return ans;
+}
