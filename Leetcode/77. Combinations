@@ -1,0 +1,24 @@
+class Solution {
+public:
+    vector<vector<int>> ans;
+    void generate(vector<int>& temp,int arraysize,int start,int& n,int& k){
+        if(arraysize==k){
+            ans.push_back(temp);
+            return;
+        }
+        
+        for(int i=start;i<n;i++){
+            temp.push_back(i+1);
+            generate(temp,arraysize+1,i+1,n,k);
+            temp.pop_back();
+        }
+        
+        return;
+    }
+    
+    vector<vector<int>> combine(int n, int k) {
+        vector<int> temp;
+        generate(temp,0,0,n,k);
+        return ans;
+    }
+};
