@@ -1,0 +1,32 @@
+class Solution 
+{
+    public:
+    //Function to return a list of indexes denoting the required 
+    //combinations whose sum is equal to given number.
+    vector<vector<int>> ans;
+    void generate(vector<int> temp,vector<int>& Array,int sum,int index){
+        if(sum==0){
+            ans.push_back(temp);
+            return;
+        }
+        if(index==Array.size()){
+            return;
+        }
+        
+        if(sum>=Array[index]){
+            temp.push_back(Array[index]);
+            generate(temp,Array,sum-Array[index],index);
+            temp.pop_back();
+        }
+        
+        generate(temp,Array,sum,index+1);
+        return;
+    }
+    vector<vector<int> > combinationSum(vector<int> &A, int B) {
+        set<int> s(A.begin(),A.end());
+        vector<int> Array(s.begin(),s.end());
+        vector<int> temp;
+        generate(temp,Array,B,0);
+        return ans;
+    }
+};
