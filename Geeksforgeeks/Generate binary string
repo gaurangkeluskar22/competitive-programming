@@ -1,0 +1,30 @@
+class Solution
+{
+	public:
+	vector<string> ans;
+	void generate(string s,vector<int> location,int pointer){
+	    if(pointer==location.size()){
+	        ans.push_back(s);
+	        return;
+	    }
+	    s[location[pointer]]='0';
+	    generate(s,location,pointer+1);
+	    
+	    s[location[pointer]]='1';
+	    generate(s,location,pointer+1);
+	}
+	
+	vector<string> generate_binary_string(string s)
+		{
+		    vector<int> location;
+		    for(int i=0;i<s.length();i++){
+		        if(s[i]=='?'){
+		            location.push_back(i);
+		        }
+		    }
+		    
+		    generate(s,location,0);
+		    
+		    return ans;
+		}
+};
