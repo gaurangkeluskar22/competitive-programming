@@ -1,0 +1,41 @@
+/**
+ * class Tree {
+ *     public:
+ *         int val;
+ *         Tree *left;
+ *         Tree *right;
+ * };
+ */
+vector<int> solve(Tree* root) {
+    vector<int> ans;
+    if(root==NULL){
+        return ans;
+    }
+    queue<Tree*> q;
+    vector<int> temp;
+    q.push(root);
+    int depth=0;
+    while(!q.empty()){
+        int len=q.size();
+        while(len--){
+            Tree* front=q.front();
+            q.pop();
+            if(front->left){
+                q.push(front->left);
+            }
+            if(front->right){
+                q.push(front->right);
+            }
+            temp.push_back(front->val);
+        }
+        if(depth%2!=0){
+            reverse(temp.begin(),temp.end());
+        }
+        for(auto it:temp){
+            ans.push_back(it);
+        }
+        temp.clear();
+        depth+=1;
+    }
+    return ans;
+}
