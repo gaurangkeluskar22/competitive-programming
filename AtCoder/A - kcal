@@ -1,0 +1,3 @@
+a,b=map(int,input().strip().split())
+val=a*b
+print(val/100)
