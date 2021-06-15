@@ -1,0 +1,16 @@
+int generate(Node* root,int x,int& count){
+    if(root==NULL){
+        return 0;
+    }
+    int val=generate(root->left,x,count)+root->data+generate(root->right,x,count);
+    if(val==x){
+        count+=1;
+    }
+    return val;
+}
+int countSubtreesWithSumX(Node* root, int x)
+{
+	int count=0;
+	generate(root,x,count);
+	return count;
+}
