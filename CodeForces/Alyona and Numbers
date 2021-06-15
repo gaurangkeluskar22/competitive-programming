@@ -1,0 +1,24 @@
+n,m=map(int,input().strip().split())
+arr=[[4,9],[3,8],[2,7],[1,6],[5,10]]
+count=0
+ans=[]
+for j in range(0,len(arr)):
+    val=0
+    count=0
+    val=arr[j][0]
+    while(m>=val):
+        count+=1
+        val+=10
+
+    val=0
+    val=arr[j][1]
+    while(m>=val):
+        count+=1
+        val+=10
+    ans.append(count)
+
+final=0
+for i in range(1,n+1):
+    t=i%5
+    final+=ans[t-1]
+print(final)
