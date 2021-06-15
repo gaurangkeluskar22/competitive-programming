@@ -1,0 +1,47 @@
+struct Node
+{
+    int data;
+    struct Node *left;
+    struct Node *right;
+
+    Node(int x)
+    {
+        data = x;
+        left = NULL;
+        right = NULL;
+    }
+};
+*/
+
+class Solution
+{
+public:
+    int depthOfOddLeaf(Node *root)
+    {
+        if(root==NULL){
+            return 0;
+        }
+        queue<Node*> q;
+        q.push(root);
+        int level = 1;
+        int ans=0;
+        while(!q.empty()){
+            int len = q.size();
+            for(int i=0;i<len;i++){
+                Node* front = q.front();
+                q.pop();
+                if(front->left){
+                    q.push(front->left);
+                }
+                if(front->right){
+                    q.push(front->right);
+                }
+                if((front->left==NULL && front->right==NULL) && level%2==1){
+                    ans=max(ans,level);
+                }
+            }
+            level+=1;
+        }
+        return ans;
+    }
+};
