@@ -1,0 +1,51 @@
+/*
+The structure of Link list Node is as follows
+struct Node
+{
+    int data;
+    struct node* next;
+
+    Node(int x){
+        data = x;
+        next = NULL;
+    }
+};
+The structure of TreeNode is as follows
+struct TreeNode
+{
+    int data;
+    TreeNode *left;
+    TreeNode *right;
+};
+*/
+
+//Function to make binary tree from linked list.
+void convert(Node *head, TreeNode *&root) {
+    Node* curr = head->next;
+      TreeNode* ans;
+    if(head!=NULL){
+        ans = new TreeNode(head->data);
+    }
+    root=ans;
+    queue<TreeNode*> q;
+    q.push(ans);
+    while(!q.empty()){
+        int len=q.size();
+        while(len--){
+            TreeNode* tnode = q.front();
+            q.pop();
+            if(curr!=NULL){
+                tnode->left = new TreeNode(curr->data);
+                curr=curr->next;
+                q.push(tnode->left);
+            }
+            if(curr!=NULL){
+                tnode->right = new TreeNode(curr->data);
+                curr=curr->next;
+                q.push(tnode->right);
+            }
+            
+        }
+    
+    }
+}
