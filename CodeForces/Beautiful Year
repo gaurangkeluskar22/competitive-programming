@@ -1,0 +1,9 @@
+n=int(input())
+def solve(n):
+    while(True):
+        n=n+1
+        s=str(n)
+        if(s.count(s[0])==1 and s.count(s[1])==1 and s.count(s[2])==1 and s.count(s[3])==1):
+            return int(n)
+
+print(solve(n))
