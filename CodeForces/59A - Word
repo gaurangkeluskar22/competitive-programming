@@ -1,0 +1,13 @@
+string=input()
+countu=0
+countl=0
+for i in string:
+    if(i.isupper()):
+        countu+=1
+    else:
+        countl+=1
+
+if(countu>countl):
+    print(string.upper())
+else:
+    print(string.lower())
