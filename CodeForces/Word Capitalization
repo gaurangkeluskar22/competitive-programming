@@ -1,0 +1,6 @@
+string=input()
+if(string[0].islower()):
+   val=string[0].upper()
+   print(val+string[1:])
+else:
+    print(string)
