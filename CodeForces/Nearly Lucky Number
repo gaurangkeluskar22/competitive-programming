@@ -1,0 +1,19 @@
+string=input()
+count=0
+for i in string:
+    if(i=='4' or i=='7'):
+        count+=1
+
+
+flag=True
+for i in str(count):
+    if(i=='4' or i=='7'):
+        pass
+    else:
+        flag=False
+        break
+
+if(flag):
+    print("YES")
+else:
+    print("NO")
