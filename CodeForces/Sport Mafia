@@ -1,0 +1,12 @@
+n,k=map(int,input().strip().split())
+def solve(n,k):
+    s=0
+    for i in range(1,n+1):
+        s+=i
+        if(s-k==n-i):
+            return (n-i)
+    return 0
+
+print(solve(n,k))
+
+
