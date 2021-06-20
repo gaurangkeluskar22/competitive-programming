@@ -1,0 +1,36 @@
+class Solution {
+  public:
+    string isSumOfTwo(int N){
+        bool arr[N+1];
+        memset(arr,true,sizeof(arr));
+        vector<int> ans;
+        
+        for(int i=2;i*i<=N;i++){
+            if(arr[i]==true){
+                for(int j=i*i;j<=N;j+=i){
+                    arr[j]=false;
+                }
+            }
+        }
+        for(int i=2;i<=N;i++){
+            if(arr[i]){
+                ans.push_back(i);
+            }
+        }
+        int left=0;
+        int right=ans.size()-1;
+        while(left<=right){
+            if(ans[left]+ans[right]==N){
+                return "Yes";
+            }    
+            if(ans[left]+ans[right]>N){
+                right-=1;
+            }
+            if(ans[left]+ans[right]<N){
+                left+=1;
+            }
+        }
+        
+        return "No";
+    }
+};
