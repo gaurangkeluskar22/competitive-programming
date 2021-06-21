@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int ans=INT_MIN;
+    int generate(TreeNode* root){
+        if(root==NULL){
+            return 0;
+        }
+        int l = max(generate(root->left),0);
+        int r = max(generate(root->right),0);
+        
+        ans = max(ans,l+r+root->val);
+        
+        return root->val+max(l,r);
+    }
+    
+    int maxPathSum(TreeNode* root) {
+        generate(root);
+        return ans;
+    }
+};
