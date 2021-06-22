@@ -1,0 +1,17 @@
+class Solution:
+    def solve(self, s):
+        s+='0'
+        count=0
+        ans=''
+        for i in range(len(s)-1):
+            if(s[i]==s[i+1]):
+                count+=1
+            else:
+                count+=1
+                ans+=str(count)
+                ans+=s[i]
+                count=0
+        return ans
+        
+
+        
