@@ -1,0 +1,16 @@
+class Solution:
+    def countNumberswith4(self, N):
+        def present(x):
+            return "4" in str(x)
+        
+        if(N<4):
+            return 0
+        arr=[0]*(N+1)
+        arr[4]=1
+        for i in range(5,N+1):
+            if(present(i)):
+                arr[i]=1+arr[i-1]
+            else:
+                arr[i]=arr[i-1]
+        
+        return arr[N]
