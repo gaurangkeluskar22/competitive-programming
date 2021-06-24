@@ -1,0 +1,32 @@
+n=int(input())
+string=input()
+arr1=[]
+for i in string:
+    arr1.append(i)
+arr2=['0']*n
+
+if(n%2==0):
+    left=0
+    right=n-1
+    itr=n-2
+    while(left<right):
+        arr2[left]=arr1[itr]
+        arr2[right]=arr1[itr+1]
+        itr-=2
+        left+=1
+        right-=1
+    print(''.join(arr2))
+else:
+    left=0
+    right=n-1
+    itr=n-2
+    while(left<right):
+        arr2[left]=arr1[itr]
+        arr2[right]=arr1[itr+1]
+        itr-=2
+        left+=1
+        right-=1
+    arr2[left]=arr1[0]
+    print(''.join(arr2))
+    
+    
