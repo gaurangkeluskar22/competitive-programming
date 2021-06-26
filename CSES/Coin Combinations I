@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+const int MOD = 1e9+7;
+int32_t main(){
+    long long n,total;
+    cin>>n>>total;
+    vector<long long> dp(total+1,0);
+    vector<long long> v(n);
+    for(long long i=0;i<n;i++){
+        cin>>v[i];
+    }
+    dp[0]=1; 
+    for(long long  i=1;i<=total;i++){
+        for(long long j=0;j<n;j++){
+            if(i-v[j]>=0){
+                dp[i]=(dp[i]+dp[i-v[j]])%MOD;
+            }
+        }
+        }   
+        cout<<dp[total]%MOD<<"\n";
+
+}
