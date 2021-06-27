@@ -1,0 +1,5 @@
+for _ in range(int(input())):
+    string=input()
+    va11='1'+string
+    val2=string[0:1]+'0'+string[1:]
+    print(min(va11,val2))
