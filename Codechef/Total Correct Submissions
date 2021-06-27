@@ -1,0 +1,31 @@
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+   int t;
+   cin>>t;
+   while(t--){
+       int n;
+       cin>>n;
+       unordered_map<string,int> m;
+       n*=3;
+       while(n--){
+           string s;
+           int c;
+           cin>>s>>c;
+           m[s]+=c;
+       }
+       vector<int> ans;
+       for(auto it:m){
+           ans.push_back(it.second);
+       }
+       sort(ans.begin(),ans.end());
+       for(auto it:ans){
+           cout<<it<<" ";
+       }
+       cout<<"\n";
+   }
+   return 0;
+}
