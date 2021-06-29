@@ -1,0 +1,8 @@
+for _ in range(int(input())):
+    string=input()
+    if(len(string)<=10):
+        print(string)
+    else:
+        val=len(string)-2
+        print(string[0]+str(val)+string[-1])
+        
