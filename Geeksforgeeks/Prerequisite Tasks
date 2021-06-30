@@ -1,0 +1,31 @@
+class Solution {
+public:
+    bool iscycle(vector<int> adj[],vector<int>& vis,int node){
+        if(vis[node]==1){
+            return true;
+        }
+        if(vis[node]==0){
+            vis[node]=1;
+            for(auto it:adj[node]){
+                if(iscycle(adj,vis,it)){
+                    return true;
+                }
+            }
+        }
+        vis[node]=2;
+        return false;
+    }
+	bool isPossible(int N, vector<pair<int, int> >& prerequisites) {
+	    vector<int> adj[N];
+	    for(auto it:prerequisites){
+	        adj[it.second].push_back(it.first);
+	    }
+	    vector<int> vis(N);
+	    for(int i=0;i<N;i++){
+	        if(iscycle(adj,vis,i)){
+	            return false;
+	        }
+	    }
+	    return true;
+	}
+};
