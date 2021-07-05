@@ -1,0 +1,25 @@
+class Solution {
+public:
+    int countVowelPermutation(int n) {
+        long long aCount=1;
+        long long eCount=1;
+        long long iCount=1;
+        long long oCount=1;
+        long long uCount=1;
+        long long MOD = 1e9+7;
+        for(int i=1;i<n;i++){
+            long long anewcount = (eCount+iCount+uCount)%MOD;
+            long long enewcount = (aCount+iCount)%MOD;
+            long long inewcount = (eCount+oCount)%MOD;
+            long long onewcount = (iCount)%MOD;
+            long long unewcount = (iCount+oCount)%MOD;
+            aCount = anewcount;
+            eCount = enewcount;
+            iCount = inewcount;
+            oCount = onewcount;
+            uCount = unewcount;
+        }
+        long long result = (aCount+eCount+iCount+oCount+uCount)%MOD;        
+        return result;
+    }
+};
