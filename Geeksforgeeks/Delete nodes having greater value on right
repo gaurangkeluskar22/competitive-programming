@@ -1,0 +1,41 @@
+class Solution
+{
+    public:
+    Node* reverseLinkedList(Node* head){
+        Node* curr=head;
+        Node* temp=head;
+        Node* prev=NULL;
+        while(curr!=NULL){
+            curr=curr->next;
+            temp->next=prev;
+            prev=temp;
+            temp=curr;
+        }
+        head=prev;
+        return head;
+    }
+    
+    Node* deleteNode(Node* head){
+        Node* curr=head;
+        Node* temp;
+        while(curr!=NULL && curr->next!=NULL){
+            if(curr->data > curr->next->data){
+                temp=curr->next;
+                curr->next=curr->next->next;
+                free(temp);
+            }
+            else{
+                curr=curr->next;
+            }
+        }
+        return head;
+    }
+    
+    Node *compute(Node *head)
+    {
+        head=reverseLinkedList(head);
+        head=deleteNode(head);
+        head=reverseLinkedList(head);
+        return head;
+    }
+};
