@@ -1,0 +1,32 @@
+from collections import Counter
+ 
+for _ in range(int(input())):
+     string=input()
+     def check_order(string,m,arr):
+          left=0
+          right=len(string)-1
+          s=''
+          while(left<=right):
+               if(m[string[left]]>m[string[right]]):
+                    s+=string[left]
+                    left+=1
+               else:
+                    s+=string[right]
+                    right-=1
+ 
+          s=s[::-1]
+          for i in range(len(string)):
+               if(s[i]!=arr[i]):
+                    return "NO"
+ 
+          return "YES"
+          
+ 
+     #count=dict(Counter(string))
+     arr=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+     m=dict()
+     for i in range(len(arr)):
+          m[arr[i]]=i
+     #print(m)
+ 
+     print(check_order(string,m,arr))
