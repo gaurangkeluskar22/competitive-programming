@@ -1,0 +1,19 @@
+for _ in range(int(input())):
+     input()
+     ax,ay=map(int,input().strip().split())
+     bx,by=map(int,input().strip().split())
+     fx,fy=map(int,input().strip().split())
+ 
+     if(ax==bx and bx==fx):
+          if((ay<=fy and fy<=by) or (by<=fy and fy<=ay)):
+               print((abs(bx-ax)+abs(by-ay))+2)
+          else:
+               print(abs(bx-ax)+abs(by-ay))
+     
+     elif(ay==by and by==fy):
+          if((ax<=fx and fx<=bx) or (bx<=fx and fx<=ax)):
+               print((abs(bx-ax)+abs(by-ay))+2)
+          else:
+               print(abs(bx-ax)+abs(by-ay))
+     else:
+          print(abs(bx-ax)+abs(by-ay))
