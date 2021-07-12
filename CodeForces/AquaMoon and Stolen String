@@ -1,0 +1,38 @@
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--){
+        long long n,m;
+        cin>>n>>m;
+        n=n+(n-1);
+        bool first=true;
+        vector<long long> arr;
+        while(n--){
+            if(first){
+                first=false;
+                 string s;
+                 cin>>s;
+                 for(auto it:s){
+                     arr.push_back(int(it));
+                  }
+            }
+            else{
+                string u;
+                cin>>u;
+                for(long long i=0;i<m;i++){
+                    arr[i]^=int(u[i]);
+                }
+            }
+        }
+        for(auto it:arr){
+            cout<<char(it);
+        }
+        cout<<endl;
+    }
+   return 0;
+}
