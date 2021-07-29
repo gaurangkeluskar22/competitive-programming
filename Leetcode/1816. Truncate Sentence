@@ -1,0 +1,13 @@
+class Solution:
+    def truncateSentence(self, s: str, k: int) -> str:
+        temp=list(s.strip().split())
+        ans=""
+        for i in range(0,min(k,len(temp))):
+            if(i!=min(k,len(temp))-1):
+                ans+=temp[i]
+                ans+=' '
+            else:
+                ans+=temp[i]
+        
+        return ans
+        
