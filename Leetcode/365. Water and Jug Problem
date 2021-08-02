@@ -1,0 +1,32 @@
+class Solution {
+public:
+    bool canMeasureWater(int jug1Capacity, int jug2Capacity, int targetCapacity) {
+        if(jug1Capacity+jug2Capacity==targetCapacity){
+            return true;
+        }
+        if(jug1Capacity+jug2Capacity<targetCapacity){
+            return false;
+        }
+        if(jug1Capacity>jug2Capacity){
+            int temp=jug1Capacity;
+            jug1Capacity=jug2Capacity;
+            jug2Capacity=temp;
+        }
+        int volume=0;
+        while(1){
+            cout<<volume<<endl;
+            if(volume < jug1Capacity){
+                volume+=jug2Capacity;
+            }
+            else{
+                volume-=jug1Capacity;
+            }
+            if(volume==targetCapacity){
+                return true;
+            }
+            if(volume == 0){
+                return false;
+            }
+        }
+    }
+};
