@@ -1,0 +1,25 @@
+class Solution {
+public:
+    int count=1;
+    void travel(TreeNode* root,int parent){
+        if(root==NULL){
+            return;
+        }
+        
+        if(parent<=root->val){
+            count+=1;
+            parent=root->val;
+        }
+        travel(root->left,parent);
+        travel(root->right,parent);
+    }
+    
+    int goodNodes(TreeNode* root) {
+        if(root==NULL){
+            return 0;
+        }
+        travel(root->left,root->val);
+        travel(root->right,root->val);
+        return count;
+    }
+};
