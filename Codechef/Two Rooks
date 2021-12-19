@@ -1,0 +1,7 @@
+for i in range(int(input())):
+    x,y,x1,y1=map(int,input().strip().split())
+    if(x==x1 or y==y1):
+        print("YES")
+    else:
+        print("NO")
+    
