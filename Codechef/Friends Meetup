@@ -1,0 +1,8 @@
+for i in range(int(input())):
+    x,y=map(int,input().strip().split())
+    if(x==y):
+        print("YES")
+    elif(x>y):
+        print("YES")
+    else:
+        print("NO")
