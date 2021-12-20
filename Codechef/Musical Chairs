@@ -1,0 +1,14 @@
+import math
+for i in range(int(input())):
+    temp=int(input())
+    count=0
+    x=1
+    while(x<=math.sqrt(temp-1)):
+        if((temp-1)%x==0):
+            if((temp-1)/x==x):
+                count+=1
+            else:
+                count+=2
+        x+=1
+    
+    print(count)
