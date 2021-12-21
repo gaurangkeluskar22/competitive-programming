@@ -1,0 +1,10 @@
+for i in range(int(input())):
+    temp=input()
+    if(len(temp)%2!=0):
+        print("NO")
+    else:
+        val=len(temp)//2
+        if(temp[0:val]==temp[val:len(temp)]):
+            print("YES")
+        else:
+            print("NO")
