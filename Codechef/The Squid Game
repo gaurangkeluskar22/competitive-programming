@@ -1,0 +1,9 @@
+for _ in range(int(input())):
+    n=int(input())
+    arr=list(map(int,input().strip().split()))[:n]
+    s=sum(arr)
+    ans=[]
+    for i in arr:
+        ans.append(abs(s-i))
+
+    print(max(ans))
