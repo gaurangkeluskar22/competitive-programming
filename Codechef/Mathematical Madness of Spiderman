@@ -1,0 +1,8 @@
+for _ in range(int(input())):
+    n,m=map(int,input().strip().split())
+    arr=list(map(int,input().strip().split()))[:n]
+    s=sum(arr)
+    print(s%m)
+    for i in range(n-1,-1,-1):
+        print(arr[i],end=" ")
+    print()
