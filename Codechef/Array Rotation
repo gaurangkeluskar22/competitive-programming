@@ -1,8 +1,0 @@
-n=int(input())
-array=list(map(int,input().split()))
-q=int(input())
-qarray=list(map(int,input().split()))
-ans=sum([i for i in array])
-for i in qarray:
-    ans=(ans*2)%(10**9+7)
-    print(ans)

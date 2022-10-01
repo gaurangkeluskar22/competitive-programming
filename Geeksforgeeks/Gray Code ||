@@ -1,6 +1,0 @@
-class Solution {
-  public:
-    int getGray(int n) {
-        return n^(n>>1);
-    }
-};

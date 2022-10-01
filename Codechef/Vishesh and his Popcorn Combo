@@ -1,9 +1,0 @@
-for _ in range(int(input())):
-   a1,a2=map(int,input().strip().split())
-   b1,b2=map(int,input().strip().split())
-   c1,c2=map(int,input().strip().split())
-   ans=[]
-   ans.append(a1+a2)
-   ans.append(b1+b2)
-   ans.append(c1+c2)
-   print(max(ans))

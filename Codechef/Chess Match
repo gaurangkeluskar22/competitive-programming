@@ -1,5 +1,0 @@
-for _ in range(int(input())):
-    n,a,b=map(int,input().strip().split())
-    val1=2*(180+n)
-    val2=a+b
-    print(val1-val2)

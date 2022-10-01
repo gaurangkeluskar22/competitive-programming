@@ -1,6 +1,0 @@
-for _ in range(int(input())):
-  amin,bmin,cmin,tmin,a,b,c=map(int,input().strip().split())
-  if(a>=amin and b>=bmin and c>=cmin and (a+b+c)>=tmin):
-    print("YES")
-  else:
-    print("NO")

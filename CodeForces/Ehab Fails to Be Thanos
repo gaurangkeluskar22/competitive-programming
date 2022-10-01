@@ -1,9 +1,0 @@
-n=int(input())
-arr=list(map(int,input().strip().split()))[:n*2]
-arr=sorted(arr)
-if(arr[0]==arr[-1]):
-     print(-1)
-else:
-     for i in arr:
-          print(i,end=" ")
-     print()

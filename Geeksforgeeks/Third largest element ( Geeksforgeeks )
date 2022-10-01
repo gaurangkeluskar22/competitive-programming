@@ -1,7 +1,0 @@
-
-def thirdLargest(arr, n):
-    arr=sorted(arr,reverse=True)
-    if(len(arr)>=3):
-        return arr[2]
-    else:
-        return -1

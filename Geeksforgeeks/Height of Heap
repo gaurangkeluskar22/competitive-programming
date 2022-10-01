@@ -1,4 +1,0 @@
-import math
-class Solution:
-    def heapHeight(self, N, arr):
-        return int(math.log(N)//math.log(2))

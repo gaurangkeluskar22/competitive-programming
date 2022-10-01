@@ -1,5 +1,0 @@
-class Solution:
-    def MissingNumber(self,array,n):
-        total=sum(array)
-        t=(n*(n+1))//2
-        return t-total

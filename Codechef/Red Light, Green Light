@@ -1,9 +1,0 @@
-for _ in range(int(input())):
-    n,m=map(int,input().strip().split())
-    arr=list(map(int,input().strip().split()))[:n]
-    count=0
-    for i in arr:
-        if(i>m):
-            count+=1
-
-    print(count)

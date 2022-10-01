@@ -1,2 +1,0 @@
-n,s=map(int,input().strip().split())
-print((s+n-1)//n)

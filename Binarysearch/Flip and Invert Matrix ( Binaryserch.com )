@@ -1,8 +1,0 @@
-class Solution:
-    def solve(self, matrix):
-        for i in range(0,len(matrix)):
-            for j in range(0,len(matrix[i])):
-                matrix[i][j]^=1
-            matrix[i].reverse()
-
-        return matrix        

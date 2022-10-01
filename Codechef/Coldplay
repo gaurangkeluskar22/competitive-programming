@@ -1,3 +1,0 @@
-for _ in range(int(input())):
-  m,s=map(int,input().strip().split())
-  print(m//s)

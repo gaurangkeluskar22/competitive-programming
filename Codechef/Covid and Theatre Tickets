@@ -1,7 +1,0 @@
-for _ in range(int(input())):
-    x,y=map(int,input().strip().split())
-    count=0
-    for i in range(0,x,2):
-        for j in range(0,y,2):
-           count+=1
-    print(count)

@@ -1,9 +1,0 @@
-import math
-try:
-    string=str(input())
-    arr=list(string.split())
-    val=arr[-1]
-    print(len(val))
-    
-except:
-    pass

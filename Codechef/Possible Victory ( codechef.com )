@@ -1,7 +1,0 @@
-a,o,c=map(int,input().strip().split())
-remain=20-o
-total=(remain*6)*6
-if(total+c>a):
-  print("YES")
-else:
-  print("NO")

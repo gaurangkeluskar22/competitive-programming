@@ -1,9 +1,0 @@
-for _ in range(int(input())):
-  ab,cd = list(map(int,input().split()))
-  tx,ty = list(map(int,input().split()))
-  px,py = list(map(int,input().split()))
-
-  policed= max(ab-px,cd-py)
-  chord = (ab-tx)+(cd-ty)
-  if chord<=policed: print("YES")
-  else: print("NO")

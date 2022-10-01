@@ -1,8 +1,0 @@
-n=int(input())
-val=''
-ans=0
-while(n):
-    val+='1'
-    ans+=int(val,2)+1
-    n-=1
-print(ans)

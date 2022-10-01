@@ -1,9 +1,0 @@
-def check(arr1, arr2, n):
-    
-    #return: True or False
-    
-    #code here
-    for i in range(len(arr1)):
-        if(arr1[i] not in arr2):
-            return False
-    return True

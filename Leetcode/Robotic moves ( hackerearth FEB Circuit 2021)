@@ -1,4 +1,0 @@
-for _ in range(int(input())):
-    num=int(input())
-    val=(num*(num+1))//2
-    print(val*2)

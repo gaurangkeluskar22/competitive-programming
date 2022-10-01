@@ -1,9 +1,0 @@
-count=0
-for _ in range(int(input())):
-  arr=list(map(int,input().strip().split()))[:3]
-  #print("array:",arr)
-  if(sum(arr)>=2):
-    count+=1
-  arr=[]
-
-print(count)

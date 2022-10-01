@@ -1,8 +1,0 @@
-for _ in range(int(input())):
-    x,y,a,b,c=map(int,input().strip().split())
-    val=x-y
-
-    if(a+b+c>val):    
-        print("NO")
-    else:
-        print("YES")

@@ -1,9 +1,0 @@
-for i in range(int(input())):
-    a,b,c=map(int,input().strip().split())
-    if((a+b+c)>=1 and (a+b+c)<3):
-        print(1)
-    elif((a+b+c)==3):
-        print(0)
-    else:
-        print(0)
-        
