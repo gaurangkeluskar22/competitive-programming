@@ -1,0 +1,26 @@
+class Solution {
+public:
+static bool cmp(pair<int,string>& a,pair<int,string>& b)
+    {
+      return a.first > b.first;
+    }
+
+    vector<string> sortPeople(vector<string>& names, vector<int>& heights) {
+        map<int,string> m;
+        vector<string> s;
+        vector<pair<int,string>> ans; 
+        for(int i=0;i<heights.size();i++){
+            m[heights[i]]=names[i];
+        }
+        for(auto& it:m){
+            ans.push_back(it);
+        }
+
+        sort(ans.begin(), ans.end(), cmp);
+        for(auto& it:ans){
+            cout<<it.first<<" "<<it.second<<endl;
+            s.push_back(it.second);
+        }
+        return s;
+    }
+};
