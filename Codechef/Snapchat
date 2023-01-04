@@ -1,0 +1,15 @@
+for _ in range(int(input())):
+    n=int(input())
+    arr1=list(map(int,input().strip().split()))[:n]
+    arr2=list(map(int,input().strip().split()))[:n]
+    count=0
+    maxi=0
+    for i in range(0,n):
+        if(arr1[i]>0 and arr2[i]>0):
+            count+=1
+            maxi=max(count,maxi)
+        else:
+            count=0
+        
+    
+    print(max(maxi,count))
