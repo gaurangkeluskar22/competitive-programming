@@ -1,0 +1,11 @@
+for _ in range(int(input())):
+    n,freshness=map(int,input().strip().split())
+    arr1=list(map(int,input().strip().split()))[:n]
+    arr2=list(map(int,input().strip().split()))[:n]
+    count=0
+    for i in range(0,len(arr1)):
+        if(arr1[i]>=freshness):
+            count+=arr2[i]
+
+    print(count)
+        
