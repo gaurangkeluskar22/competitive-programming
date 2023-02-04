@@ -1,0 +1,26 @@
+for _ in range(int(input())):
+    x=int(input())
+    s=input()
+    x=0
+    y=0
+    c=0
+    for i in s:
+        if(x==1 and y==1):
+            c=1
+            break
+        elif(i=="U"):
+            y+=1
+        elif(i=="R"):
+            x+=1
+        elif(i=="D"):
+            y-=1
+        elif(i=="L"):
+            x-=1
+ 
+    if(x==1 and y==1):
+        c=1
+    
+    if(c==1):
+        print("YES")
+    else:
+        print("NO")
