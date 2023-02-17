@@ -1,0 +1,5 @@
+for _ in range(int(input())):
+    x,y,z=map(int,input().strip().split())
+    total_seats=x*10
+    mini=min(total_seats,y)
+    print(mini*z)
