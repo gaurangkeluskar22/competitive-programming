@@ -1,0 +1,21 @@
+class Solution:
+    def passThePillow(self, n: int, time: int) -> int:
+        flag=0
+        index=1
+        while(time):
+            if(flag==0):
+                index+=1
+                
+            elif(flag==1):
+                index-=1
+                
+            if(index==n):
+                flag=1
+            elif(index==1):
+                flag=0
+                
+                
+            time-=1
+        
+        return index
+            
