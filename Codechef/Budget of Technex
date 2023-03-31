@@ -1,0 +1,6 @@
+for _ in range(int(input())):
+    x=int(input())
+    val=x*1000
+    half=val//2
+    ans=half//5
+    print(ans)
