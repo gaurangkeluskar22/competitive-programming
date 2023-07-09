@@ -1,0 +1,25 @@
+class Solution:
+    def leftRightDifference(self, nums: List[int]) -> List[int]:
+        def convertarr(nums):
+            arr=[]
+            for i in range(0,len(nums)):
+                if(i==0):
+                    arr.append(0)
+                else:
+                    arr.append(arr[i-1]+nums[i-1])
+            return arr
+
+        leftarr=[]
+        rightarr=[]
+        ans=[]
+        leftarr=convertarr(nums)        
+        nums.reverse()
+        rightarr=convertarr(nums)
+
+        rightarr.reverse()
+
+        for i in range(0,len(leftarr)):
+            ans.append(abs(leftarr[i]-rightarr[i]))
+
+        
+        return ans
