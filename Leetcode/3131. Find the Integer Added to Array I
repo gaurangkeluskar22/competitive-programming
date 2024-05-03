@@ -1,0 +1,12 @@
+class Solution:
+    def addedInteger(self, nums1: List[int], nums2: List[int]) -> int:
+        sum1=0
+        sum2=0
+        for i in nums1:
+            sum1+=i
+        for i in nums2:
+            sum2+=i
+        
+        value = sum2-sum1
+        return value//len(nums1)
+        
