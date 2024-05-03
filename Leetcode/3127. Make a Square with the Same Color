@@ -1,0 +1,37 @@
+class Solution:
+    def canMakeSquare(self, grid: List[List[str]]) -> bool:
+        def checkValue(grid,a,b):
+            countW=0
+            countB=0
+            if(grid[a][b]=='W'):
+                countW+=1
+            else:
+                countB+=1
+
+            if(grid[a][b+1]=='W'):
+                countW+=1 
+            else:
+                countB+=1
+
+            if(grid[a+1][b]=='W'):
+                countW+=1
+            else:
+                countB+=1
+
+            if(grid[a+1][b+1]=='W'):
+                countW+=1
+            else:
+                countB+=1
+        
+            if(countW >= 3 or countB >= 3):
+                return True
+            return False
+
+        for i in range(0,2):
+            for j in range(0,2):
+                value = checkValue(grid,i,j)
+                if(value):
+                    return True
+        return False
+
+        
