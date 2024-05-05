@@ -1,0 +1,20 @@
+class Solution:
+    def isValid(self, word: str) -> bool:
+        checkForVowel = False
+        checkForConsonent = False
+        vowels=['a','e','i','o','u','A','E','I','O','U']
+        specialChar=['#','$','&','@']
+        if(len(word)<3):
+            return False
+        for i in word:
+            if(i in specialChar):
+                return False
+            if(((ord(i)>=65 and ord(i)<=90) or (ord(i)>=97 and ord(i)<=122)) and i not in vowels and checkForConsonent == False):
+                checkForConsonent = True
+            if(i in vowels and checkForVowel == False):
+                checkForVowel = True
+            
+        if(checkForConsonent and checkForVowel):
+            return True
+        else:
+            return False    
