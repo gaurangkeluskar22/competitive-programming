@@ -1,0 +1,17 @@
+class Solution:
+    def numberOfSpecialChars(self, word: str) -> int:
+        m={}
+        for i in word:
+            if(i in m):
+                m[i]+=1
+            else:
+                m[i]=1
+
+        count = 0
+        for key in m:
+            if(key.isupper()):
+                value = key.lower()
+                if(value in m):
+                    count+=1
+
+        return count
