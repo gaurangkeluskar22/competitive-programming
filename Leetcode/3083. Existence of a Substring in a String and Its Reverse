@@ -1,0 +1,12 @@
+class Solution:
+    def isSubstringPresent(self, s: str) -> bool:
+        arr1=[]
+        arr2=[]
+        for i in range(0,len(s)-1):
+            arr1.append(s[i:i+2])
+            arr2.append(s[i:i+2][::-1])
+        
+        for i in arr1:
+            if(i in arr2):
+                return True
+        return False
