@@ -1,0 +1,15 @@
+class Solution:
+    def findPermutationDifference(self, s: str, t: str) -> int:
+        m={}
+        ans=0
+        for i in range(0, len(t)):
+            m[t[i]]=i
+       
+        for j in range(0, len(s)):
+            if(s[j] in m):
+                ans+=abs(j-m[s[j]])
+        
+        return ans
+
+
+        
