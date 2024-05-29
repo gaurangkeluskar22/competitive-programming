@@ -1,0 +1,9 @@
+class Solution:
+    def isArraySpecial(self, nums: List[int]) -> bool:
+        ans=True
+        for i in range(0, len(nums)-1):
+            if((nums[i]+nums[i+1])%2==0):
+                ans=False
+                break
+        return ans
+        
