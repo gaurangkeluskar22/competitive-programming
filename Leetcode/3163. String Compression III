@@ -1,0 +1,24 @@
+class Solution:
+    def compressedString(self, word: str) -> str:
+        prevcount=1
+        prevword=word[0]
+        ans=''
+        for i in range(1, len(word)):
+            if(word[i]==prevword):
+                if(prevcount==9):
+                    ans+=str(prevcount)
+                    ans+=prevword
+                    prevcount=1
+                    prevword=word[i]
+                else:   
+                    prevcount+=1
+            else:
+                ans+=str(prevcount)
+                ans+=prevword
+                prevcount=1
+                prevword=word[i]
+        
+        ans+=str(prevcount)
+        ans+=prevword
+        return ans
+        
