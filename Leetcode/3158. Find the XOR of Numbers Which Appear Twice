@@ -1,0 +1,23 @@
+class Solution:
+    def duplicateNumbersXOR(self, nums: List[int]) -> int:
+        m={}
+        for i in nums: 
+            if(i in m):
+                m[i]+=1
+            else:
+                m[i]=1    
+        
+        arr2=[]
+        for i in m:
+            if(m[i]>1):
+                arr2.append(i)
+
+        if(len(arr2)==0):
+            return 0
+        value = arr2[0]
+        for i in range(1, len(arr2)):
+            value^=arr2[i]
+        
+        return value
+
+        
