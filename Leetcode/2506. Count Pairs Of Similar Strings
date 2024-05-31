@@ -1,0 +1,16 @@
+class Solution:
+    def similarPairs(self, words: List[str]) -> int:
+        arr=[]
+        ans=0
+        for w in words:
+            temp=''
+            for i in range(0,len(w)):
+                if(w[i] not in temp):
+                    temp+= w[i]
+            arr.append(''.join(sorted(temp)))
+
+        for i in range(0,len(arr)):
+            for j in range(i+1, len(arr)):
+                if(arr[i]==arr[j]):
+                    ans+=1
+        return ans
