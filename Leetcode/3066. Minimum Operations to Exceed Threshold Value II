@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int minOperations(vector<int>& nums, int k) {
+        priority_queue <long long int, vector<long long int>, greater<long long int>> pq;
+        long long int count = 0;
+        for(auto i: nums){
+            pq.push(i);
+        }
+        while (pq.top() < k) {
+            long long int value1 = pq.top();
+            pq.pop();
+            long long int value2 = pq.top();
+            pq.pop();
+            pq.push(value1 * 2 + value2);
+            count+=1;
+        }
+        return count;
+    }
+};
