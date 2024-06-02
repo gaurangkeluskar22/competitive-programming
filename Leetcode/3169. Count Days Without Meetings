@@ -1,0 +1,55 @@
+class Solution {
+public:
+    int countDays(int days, vector<vector<int>>& meetings) {
+        priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>> pq;
+
+        for(auto it:meetings){
+            pq.push({it[0],it[1]});
+        }
+        int count =0;
+        long long int minix = 999999999999999;
+        long long int maxi = 0;
+        while(pq.size() >= 1){
+            int x1=pq.top().first;
+            int y1=pq.top().second;
+            if(x1 < minix){
+                minix = x1;
+            }
+            if(y1 > maxi){
+                maxi = y1;
+            }
+            pq.pop();
+            if(pq.size()){
+                int x2=pq.top().first;
+                int y2=pq.top().second;
+                if(x2 < minix){
+                    minix = x2;
+                }
+                if(y2 > maxi){
+                    maxi = y2;
+                }
+                if(y1 >= x2 and y1 <= y2){
+                    pq.pop();
+                    pq.push({x1, y2});
+                }
+                else if(y1 >= x2 and y1 >= y2){
+                    pq.pop();
+                    pq.push({x1, y1});
+                }
+                else{
+                    count = count + (x2 - y1 - 1);
+                }
+            }
+        }
+
+        int x1 = pq.top().first;
+        int y1 = pq.top().second;
+        if(minix != 1){
+            count+= minix - 1;
+        }
+        if(maxi < days){
+            count+= days - maxi;
+        }    
+        return count;
+    }
+};
