@@ -1,0 +1,14 @@
+class Solution:
+    def minimumChairs(self, s: str) -> int:
+        chair = 0
+        available = 0
+        for i in s:
+            if(i=='E'):
+                if(available==0):
+                    chair+=1
+                else:
+                    available-=1
+            else:
+                available+=1
+        return chair
+        
