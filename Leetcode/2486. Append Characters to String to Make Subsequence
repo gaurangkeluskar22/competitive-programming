@@ -1,0 +1,15 @@
+class Solution:
+    def appendCharacters(self, s: str, t: str) -> int:
+        pointers=0
+        pointert=0
+        count=0
+        while(pointers < len(s) and pointert < len(t)):
+            if(s[pointers] == t[pointert]):
+                count+=1
+                pointers+=1
+                pointert+=1
+            else:
+                pointers+=1
+        
+        return len(t)-count
+        
