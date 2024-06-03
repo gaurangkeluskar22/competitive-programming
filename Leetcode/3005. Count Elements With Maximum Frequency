@@ -1,0 +1,24 @@
+class Solution {
+public:
+    int maxFrequencyElements(vector<int>& nums) {
+        unordered_map<int,int> m;
+        for(auto it: nums){
+            m[it]+=1;
+        }
+        int maxi = 0;
+        int count =0;
+        vector<pair<int, int>> vec(m.begin(), m.end());
+
+    sort(vec.begin(), vec.end(), [](const auto &a, const auto &b) {
+        return a.second > b.second;
+    });
+
+    for (const auto &p : vec) {
+        if(p.second >= maxi){
+            maxi = p.second;
+            count+= p.second;
+        }
+    }
+        return count;
+    }
+};
