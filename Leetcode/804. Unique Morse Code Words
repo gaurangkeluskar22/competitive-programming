@@ -1,0 +1,17 @@
+class Solution:
+    def uniqueMorseRepresentations(self, words: List[str]) -> int:
+        ans=[]
+        temp=[]
+        dicti = {'a':".-", 'b':"-...", 'c':"-.-.", 'd':"-..", 'e':".", 'f':"..-.", 'g':"--.", 'h':"....", 'i':"..", 'j':".---", 'k':"-.-", 'l':".-..", 'm':"--", 'n':"-.", 'o':"---", 'p':".--.", 'q':"--.-", 'r':".-.", 's':"...", 't':"-", 'u':"..-", 'v':"...-", 'w':".--", 'x':"-..-", 'y':"-.--", 'z':"--.."}
+        for word in words:
+            s=''
+            for i in word:
+                s+=dicti[i]
+            ans.append(s)
+
+        for i in ans:
+            if(i not in temp):
+                temp.append(i)
+        
+        return len(temp) 
+        
