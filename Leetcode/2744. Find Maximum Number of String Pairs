@@ -1,0 +1,19 @@
+class Solution:
+    def maximumNumberOfStringPairs(self, words: List[str]) -> int:
+        arr=[]
+        count = 0
+        for word in words:
+            if(word in arr):
+                count+=1
+            else:    
+                val = word[::-1]
+                if(val in arr):
+                    count+=1
+                else:
+                    arr.append(val)
+
+        return count
+            
+            
+
+        
