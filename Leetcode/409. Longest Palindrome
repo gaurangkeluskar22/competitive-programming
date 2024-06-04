@@ -1,0 +1,21 @@
+class Solution {
+public:
+    int longestPalindrome(string s) {
+        vector<int> a(256,0);
+        int count = 0;
+        for(int i = 0;i < s.length();i++){
+            a[s[i]]++;
+        }
+        int odd =0;
+        for(int i=0; i<256;i++){
+            if(a[i]%2==0){
+                count+=a[i];
+            }
+            else{
+                odd =1;
+                count+=(a[i]-1);
+            }
+        }
+        return count + odd;
+    }
+};
