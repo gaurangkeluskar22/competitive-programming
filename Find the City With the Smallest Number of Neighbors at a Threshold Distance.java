@@ -1,8 +1,3 @@
-/* Problem Overview:- The goal is to find the city with the smallest number of neighbors within a given distance threshold. If there are multiple such cities, return the city with the greatest number.*/
-
-
-//------------------CODE----------------------//
-
 class Solution {
     public int findTheCity(int n, int[][] edges, int distanceThreshold) {
         int[][] matrix = new int[n][n];
@@ -51,6 +46,3 @@ class Solution {
         return bestCity;
     }
 }
-
-
-/* Summary:- This solution uses the Floyd-Warshall algorithm to compute the shortest paths between all pairs of cities. It then finds the city with the smallest number of neighbors within the given distance threshold. If there are multiple such cities, it returns the one with the greatest number. */
